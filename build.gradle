@@ -34,6 +34,12 @@ dependencies {
     implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.11'
 
     implementation group: 'com.googlecode.owasp-java-html-sanitizer', name: 'owasp-java-html-sanitizer', version: '20220608.1'
+
+    implementation group: 'net.sf.jxls', name: 'jxls-core', version: '1.0.6'
+    implementation group: 'org.jxls', name: 'jxls', version: '1.0.9'
+    implementation group: 'org.jxls', name: 'jxls-jexcel', version: '1.0.6'
+    implementation group: 'org.apache.poi', name: 'poi', version: '3.14'
+    implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '3.14'
 }
 
 tasks.named('test') {

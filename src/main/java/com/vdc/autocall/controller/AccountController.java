@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -16,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.net.URLDecoder;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -28,31 +30,49 @@ public class AccountController {
     @Resource(name = "webSessionListener")
     private WebSessionListener webSessionListener;
 
-    @RequestMapping(value = "/account/add")
-    @ResponseBody
-    public Map<String, Object> account_add(CommandMap commandMap) {
+    @RequestMapping(value="/account/list")
+    public ModelAndView AccountList(CommandMap commandMap) throws Exception{
+        ModelAndView mv = new ModelAndView("jsonView");
+        List<Map<String,Object>> dvc = accountService.AccountList(commandMap.getMap());
+        mv.addObject("data", dvc);
+        return mv;
+    }
 
-        Map<String, Object> Map = new HashMap<>();
-
-        try {
-            accountService.account_add(commandMap.getMap());
-            Map.put("success", true);
-        } catch (Exception e) {
-            Map.put("success", false);
-            Map.put("msg", e.getMessage());
-        }
-        return Map;
-
+    @RequestMapping(value="/account/add")
+    public ModelAndView AccountAdd(CommandMap commandMap, HttpSession session) throws Exception {
+        ModelAndView mv = new ModelAndView("jsonView");
+        accountService.addAccount(commandMap.getMap());
+        return mv;
+    }
+    @RequestMapping(value="/account/del")
+    public ModelAndView AccountDel(CommandMap commandMap) throws Exception{
+        ModelAndView mv = new ModelAndView("jsonView");
+        accountService.delAccount(commandMap.getMap());
+        return mv;
     }
 
     @RequestMapping("/login")
-    public ModelAndView page_index() {
+    public ModelAndView login() {
         return new ModelAndView("view/login");
     }
 
     @RequestMapping("/main")
-    public ModelAndView main_index() {
+    public ModelAndView main() {
         return new ModelAndView("view/main");
+    }
+
+    @RequestMapping("/monitor")
+    public ModelAndView monitor() {
+        return new ModelAndView("view/monitor");
+    }
+
+    @RequestMapping("/stats")
+    public ModelAndView stats() {
+        return new ModelAndView("view/stats");
+    }
+    @RequestMapping("/detail")
+    public ModelAndView detail() {
+        return new ModelAndView("view/detail");
     }
 
 

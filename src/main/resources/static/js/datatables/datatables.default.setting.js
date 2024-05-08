@@ -11,7 +11,7 @@ $.extend( true, $.fn.dataTable.defaults, {
     select: true,
     searching: true,
     bLengthChange: false,
-    dom: "<'row mb-1'<'col-sm-12 col-md-6 d-flex align-items-center justify-content-start'f><'col-sm-12 col-md-6 d-flex align-items-center justify-content-end'l>>" +
+    dom: "<'row mb-1'<'col-sm-12 col-md-6 d-flex align-items-center justify-content-start'l><'col-sm-12 col-md-6 d-flex align-items-center justify-content-end'f>>" +
         "<'row'<'col-sm-12'tr>>" +
         "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
     oLanguage: {

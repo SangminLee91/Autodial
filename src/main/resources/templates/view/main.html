@@ -17,7 +17,8 @@
     <link id="mytheme" rel="stylesheet" media="screen, print" href="css/themes/cust-theme-15.css">
     <link id="myskin" rel="stylesheet" media="screen, print" href="css/skins/skin-master.css">
     <link rel="stylesheet" media="screen, print" href="css/datatables/datatables.bundle.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+
 </head>
 <!-- BEGIN Body -->
 
@@ -32,12 +33,29 @@
 
             <!-- BEGIN PRIMARY NAVIGATION -->
             <nav id="js-primary-nav" class="primary-nav" role="navigation">
-
                 <ul id="js-nav-menu" class="nav-menu">
                     <li class="active">
-                        <a href="#" title="메뉴1" >
-                            <i class="fal fa-file"></i>
-                            <span class="nav-link-text" >메뉴</span>
+                        <a href="/autodial/main" title="메뉴1" >
+                            <i class="fas fa-mobile-alt"></i>
+                            <span class="nav-link-text" >기기현황</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/autodial/monitor" title="메뉴2">
+                            <i class="fal fa-chart-line"></i>
+                            <span class="nav-link-text">모니터링</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/autodial/stats" title="메뉴3">
+                            <i class="fal fa-chart-bar"></i>
+                            <span class="nav-link-text">통계</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/autodial/detail" title="상세이력">
+                            <i class="fal fa-history"></i>
+                            <span class="nav-link-text">상세이력</span>
                         </a>
                     </li>
                     <button id="logout" class="btn btn-link ml-auto">
@@ -65,7 +83,7 @@
                     </a>
 
                     <button id="signup" class="btn btn-link ml-auto">
-                        <i class="fas fa-user-plus"></i> 사용자 추가
+                        <i class="fas fa-user-plus"></i> 사용자 설정
                     </button>
                 </div>
 
@@ -93,22 +111,18 @@
                             </div>
                             <div class="panel-container show">
                                 <div class="panel-content">
-                                    <table id="dt-basic-example" class="table-sm table-bordered table-hover table-striped w-100" style="width:100%">
+                                    <table id="DeviceList" class="table-sm table-bordered table-hover table-striped w-100" style="width:100%">
                                         <thead class="thead-themed">
                                         <tr>
-                                            <th>LTE 폰 번호</th>
-                                            <th>변경 발신 번호</th>
+                                            <th>기기 번호</th>
+                                            <th>DDD 발신 번호</th>
+                                            <th>외부 발신 번호</th>
                                             <th>등록된 시간</th>
                                             <th>수정된 시간</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr th:each="device : ${data}" th:data-seq="${device.seq}">
-                                            <td th:text="${device.lte_phone}"></td>
-                                            <td th:text="${device.cid_number}"></td>
-                                            <td th:text="${device.reg_dt}"></td>
-                                            <td th:text="${device.last_edt_dt}"></td>
-                                        </tr>
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -158,10 +172,28 @@
                                 <input type="password" id="user_pwd" placeholder="비밀번호" class="form-control">
                             </div>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-xs btn-dark" id="addUserBtn">추가</button>
-                        <button type="button" class="btn btn-xs btn-dark" data-dismiss="modal">닫기</button>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-xs btn-dark" id="addUserBtn">추가</button>
+                            <button type="button" class="btn btn-xs btn-dark" data-dismiss="modal">닫기</button>
+                        </div>
+
+                        <!-- 사용자 리스트와 삭제 버튼 -->
+                        <div class="panel-container show">
+                            <div class="panel-content">
+                            <table id="AccountList" class="table-sm table-bordered table-hover table-striped w-100" style="width:100%">
+                                <thead class="thead-themed">
+                                <tr>
+                                    <th>아이디</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                            </div>
+                        <button type="button" class="btn btn-sm btn-danger" id="deleteUserBtn">선택된 사용자 삭제</button>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -196,13 +228,22 @@
                         </div>
                     </div>
 
+                    <div class="form-group">
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text width-76px">DDD 발신 번호</span>
+                            </div>
+                            <input type="text" id="ddd_number" placeholder="DDD 발신 번호" class="form-control">
+                        </div>
+                    </div>
+
 
                     <div class="form-group">
                         <div class="input-group input-group-sm">
                             <div class="input-group-prepend">
-                                <span class="input-group-text width-76px">변경 발신 번호</span>
+                                <span class="input-group-text width-76px">외부 발신 번호</span>
                             </div>
-                            <input type="text" id="cid_number" placeholder="변경 발신 번호" class="form-control">
+                            <input type="text" id="cid_number" placeholder="외부 발신 번호" class="form-control">
                         </div>
                     </div>
 
@@ -239,9 +280,17 @@
                     <div class="form-group">
                         <div class="input-group input-group-sm">
                             <div class="input-group-prepend">
-                                <span class="input-group-text width-76px">변경 발신 번호</span>
+                                <span class="input-group-text width-76px">DDD 발신 번호</span>
                             </div>
-                            <input type="text" id="edit_cid_number" placeholder="변경 발신 번호" class="form-control">
+                            <input type="text" id="edit_ddd_number" placeholder="DDD 발신 번호" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text width-76px">외부 발신 번호</span>
+                            </div>
+                            <input type="text" id="edit_cid_number" placeholder="외부 발신 번호" class="form-control">
                         </div>
                     </div>
                 </div>
@@ -254,6 +303,37 @@
     </div>
     <!-- Edit Modal End -->
 
+    <div class="modal fade" id="test" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        테스트
+                    </h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fal fa-times"></i></span>
+                    </button>
+                </div>
+
+                <form name="testfrm" id="testfrm" method="post">
+                    <div class="modal-body">
+
+
+                        <div class="form-group">
+                            <div class="input-group input-group-sm">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text width-76px">테스트칸</span>
+                                </div>
+                                <input type="text" id="testbox" placeholder="LTE 폰 번호" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 <th:block layout:fragment="script">
@@ -263,44 +343,75 @@
 <script src="js/datatables/datatables.default.setting.js"></script>
 
 <script type="text/javascript">
-    let selectedRow = "";
+    let selectedDeviceRow = "";
+    let selectedUserRow = "";
 
     $(document).ready(function() {
         $("#logout").css("cursor", "pointer").click(function () {
             location.replace(CONTEXT_PATH + "/logout");
         });
 
-        const table = $('#dt-basic-example').DataTable({
+        let usertable;
+        let devicetable;
+
+        devicetable = $('#DeviceList').DataTable({
             ajax: {
                 url: CONTEXT_PATH + "/list",
                 dataSrc: "data"
             },
             columns: [
                 // { "data": "seq" },
-                { "data": "lte_phone" },
-                { "data": "cid_number" },
-                { "data": "reg_dt" },
-                { "data": "last_edt_dt" }
+                {"data": "lte_phone"},
+                {"data": "ddd_number"},
+                {"data": "cid_number"},
+                {"data": "reg_dt"},
+                {"data": "last_edt_dt"}
+            ],
+            bLengthChange: false,
+            scrollCollapse: true,
+            ordering: true,
+            select: true,
+            paging: true,             // 페이징처리
+            pageLength: 13            // 페이지 별 열 갯수
+        });
+
+        devicetable.on('select', function (e, dt, type, indexes) {
+            selectedDeviceRow = devicetable.row(indexes).data();
+            console.log("selectedRow", selectedDeviceRow);
+        }).on('deselect', function () {
+            selectedDeviceRow = "";
+        });
+
+        // 사용자 리스트
+        usertable = $('#AccountList').DataTable({
+            ajax: {
+                url: CONTEXT_PATH + "/account/list",
+                dataSrc: "data"
+            },
+            columns: [
+                // { "data": "seq" },
+                {"data": "user_id"}
             ],
             bLengthChange: false,
             scrollCollapse: true,
             ordering: false,
             select: true,
             paging: true,             // 페이징처리
-            pageLength: 13            // 페이지 별 열 갯수
+            pageLength: 5            // 페이지 별 열 갯수
         });
 
-        table.on('select', function(e, dt, type, indexes){
-            selectedRow = table.row(indexes).data();
-            console.log("selectedRow", selectedRow);
-        }).on('deselect', function(){
-            selectedRow = "";
+        usertable.on('select', function (e, dt, type, indexes) {
+            selectedUserRow = usertable.row(indexes).data();
+            console.log("selectedRow", selectedUserRow);
+        }).on('deselect', function () {
+            selectedUserRow = "";
         });
 
-        // 사용자 추가
+        // 사용자 설정 모달
         $('#signup').click(function () {
             $('#addUserModal').modal('show');
         });
+
 
         // 추가 버튼
         $('#addUserBtn').click(function () {
@@ -325,9 +436,34 @@
             });
         });
 
+        $('#deleteUserBtn').click(function () {
+            if (selectedUserRow === "") {
+                alert("사용자를 선택 해 주세요.");
+                return;
+            }
+
+            if (confirm("정말로 삭제하시겠습니까?")) {
+                $.ajax({
+                    url: CONTEXT_PATH + '/account/del',
+                    type: 'POST',
+                    data: {
+                        seq: selectedUserRow.seq
+                    },
+                    success: function () {
+                        alert("삭제가 완료되었습니다.")
+                        $('#AccountList').DataTable().ajax.reload();
+                    },
+                    error: function () {
+                        console.error('사용자 삭제 도중 오류가 발생헀습니다.');
+                    }
+                });
+            }
+        });
+
         //등록 버튼
         $('#saveBtn').click(function () {
             let ltePhone = $('#lte_phone').val();
+            let dddNumber = $('#ddd_number').val();
             let cidNumber = $('#cid_number').val();
 
             $.ajax({
@@ -335,12 +471,13 @@
                 type: 'POST',
                 data: {
                     lte_phone: ltePhone,
+                    ddd_number: dddNumber,
                     cid_number: cidNumber
                 },
                 success: function () {
                     $('#add').modal('hide');
                     alert("기기가 추가되었습니다.")
-                    $('#dt-basic-example').DataTable().ajax.reload();
+                    $('#DeviceList').DataTable().ajax.reload();
                 },
                 error: function () {
                     console.error('기기 추가 중 에러가 발생했습니다.');
@@ -348,20 +485,21 @@
             });
         });
 
-
         // 수정 버튼 클릭 시
         $('#btn-edt').click(function () {
-            if (!selectedRow) {
+            if (!selectedDeviceRow) {
                 alert("데이터를 선택 해 주세요.");
                 return;
             }
 
-            let seq = selectedRow.seq;
-            let ltePhone = selectedRow.lte_phone;
-            let cidNumber = selectedRow.cid_number;
+            let seq = selectedDeviceRow.seq;
+            let ltePhone = selectedDeviceRow.lte_phone;
+            let dddNumber = selectedDeviceRow.ddd_number;
+            let cidNumber = selectedDeviceRow.cid_number;
 
             $('#editModal #edit_seq').val(seq);
             $('#editModal #edit_lte_phone').val(ltePhone);
+            $('#editModal #edit_ddd_number').val(dddNumber);
             $('#editModal #edit_cid_number').val(cidNumber);
 
             $('#editModal').modal('show');
@@ -370,20 +508,22 @@
         // 수정 중 저장 버튼 클릭 시
         $('#editSaveBtn').click(function () {
             let ltePhone = $('#editModal #edit_lte_phone').val();
+            let dddNumber = $('#editModal #edit_ddd_number').val();
             let cidNumber = $('#editModal #edit_cid_number').val();
 
             $.ajax({
                 url: CONTEXT_PATH + '/edit',
                 type: 'POST',
                 data: {
-                    seq: selectedRow.seq,
+                    seq: selectedDeviceRow.seq,
                     lte_phone: ltePhone,
+                    ddd_number: dddNumber,
                     cid_number: cidNumber
                 },
                 success: function () {
                     $('#editModal').modal('hide');
                     alert("수정이 완료되었습니다.");
-                    $('#dt-basic-example').DataTable().ajax.reload();
+                    $('#DeviceList').DataTable().ajax.reload();
                 },
                 error: function () {
                     console.error('수정 중 오류가 발생했습니다.');
@@ -393,26 +533,26 @@
 
         // 삭제 버튼 클릭 시
         $('#btn-delete').click(function () {
-            if (selectedRow === "") {
+            if (selectedDeviceRow === "") {
                 alert("데이터를 선택 해 주세요.");
                 return;
             }
 
             if (confirm("정말로 삭제하시겠습니까?")) {
-                    $.ajax({
-                        url: CONTEXT_PATH + '/del',
-                        type: 'POST',
-                        data: {
-                            seq: selectedRow.seq
-                        },
-                        success: function () {
-                            alert("삭제가 완료되었습니다.")
-                            $('#dt-basic-example').DataTable().ajax.reload();
-                        },
-                        error: function () {
-                            console.error('데이터 삭제 도중 오류가 발생헀습니다.');
-                        }
-                    });
+                $.ajax({
+                    url: CONTEXT_PATH + '/del',
+                    type: 'POST',
+                    data: {
+                        seq: selectedDeviceRow.seq
+                    },
+                    success: function () {
+                        alert("삭제가 완료되었습니다.")
+                        $('#DeviceList').DataTable().ajax.reload();
+                    },
+                    error: function () {
+                        console.error('데이터 삭제 도중 오류가 발생헀습니다.');
+                    }
+                });
             }
         });
     });

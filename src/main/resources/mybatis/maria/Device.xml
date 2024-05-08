@@ -5,33 +5,47 @@
 
     <!-- 조회 -->
     <select id="DeviceList" parameterType="hashmap" resultType="hashmap">
-        SELECT seq, lte_phone, cid_number,
-               DATE_FORMAT(reg_dt, '%Y/%m/%d %k:%i') AS reg_dt,
-               DATE_FORMAT(last_edt_dt, '%Y/%m/%d %k:%i') AS last_edt_dt
-        FROM device
-        WHERE del_stat = 0
+        call usp_device_list_s()
     </select>
 
     <!-- 삽입 -->
     <insert id="DeviceAdd" parameterType="hashmap">
-        INSERT INTO device (lte_phone, cid_number)
-        VALUES (#{lte_phone}, #{cid_number})
+        call usp_device_i(#{lte_phone}, #{ddd_number}, #{cid_number})
     </insert>
 
     <!-- 수정 -->
     <update id="DeviceEdit" parameterType="hashmap">
-        UPDATE device
-        SET lte_phone = #{lte_phone},
-            cid_number = #{cid_number},
-            last_edt_dt = NOW()
-        WHERE seq = #{seq}
+        call usp_device_u(#{seq, jdbcType=INTEGER}, #{lte_phone}, #{ddd_number}, #{cid_number})
     </update>
 
     <!-- 삭제 -->
     <update id="DeviceDel" parameterType="hashmap">
-        UPDATE device
-        SET del_stat = 1
-        WHERE seq = #{seq ,jdbcType=INTEGER}
+        call usp_device_d(#{seq ,jdbcType=INTEGER})
     </update>
+
+    <select id="MonitorList" parameterType="hashmap" resultType="hashmap">
+        SELECT seq,
+               lte_phone,
+               cid_number,
+               DATE_FORMAT(reg_dt, '%Y/%m/%d %k:%i') AS reg_dt
+        from device
+    </select>
+
+    <select id="StatsList" parameterType="hashmap" resultType="hashmap">
+        call usp_stats_list_s(#{srch_type, jdbcType=INTEGER}, #{start_dt}, #{end_dt})
+    </select>
+
+    <select id="DetailList" parameterType="hashmap" resultType="hashmap">
+        call usp_detail_list_s(#{start_dt}, #{end_dt})
+    </select>
+
+    <!-- 엑셀 출력 -->
+    <select id="StatsExcel" parameterType="hashmap" resultType="hashmap">
+        call usp_stats_excel(#{srch_type, jdbcType=INTEGER}, #{start_dt}, #{end_dt})
+    </select>
+
+    <select id="DetailExcel" parameterType="hashmap" resultType="hashmap">
+        call usp_detail_excel(#{start_dt}, #{end_dt})
+    </select>
 
 </mapper>

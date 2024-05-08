@@ -5,6 +5,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Map;
 
 
@@ -12,11 +13,19 @@ import java.util.Map;
 public class AccountDao extends AbstractDAO{
     @Resource(name="sqlSessionMain")
     private SqlSessionTemplate sqlSession;
-
-    public int account_add(Map<String, Object> map) {
-        return (int) insert(sqlSession, "Account.account_add", map);
+    @SuppressWarnings("unchecked")
+    public List<Map<String, Object>> AccountList(Map<String, Object> map) {
+        return (List<Map<String, Object>>)selectList(sqlSession, "Account.AccountList", map);
     }
+    public void AddAccount(Map<String, Object> map) {
+        insert(sqlSession, "Account.AccountAdd", map);
+    }
+    public void DelAccount(Map<String, Object> map) {
+        delete(sqlSession, "Account.AccountDel", map);
+    }
+
     public Map<String, Object> account_login(Map<String, Object> map){
         return (Map<String, Object>)selectOne(sqlSession, "Account.account_login", map);
     }
+
 }

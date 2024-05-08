@@ -2,12 +2,23 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="Account">
-    <insert id="account_add" parameterType="hashmap">
+
+    <select id="AccountList" parameterType="hashmap" resultType="hashmap">
+        SELECT seq, user_id
+        FROM account
+        WHERE del_yn = 0
+    </select>
+    <insert id="AccountAdd" parameterType="hashmap">
         insert into account (user_id, user_pwd)
         SELECT #{user_id}, SHA2(#{user_pwd}, 256)
         FROM DUAL
         WHERE NOT EXISTS (SELECT 1 FROM account WHERE user_id = #{user_id})
     </insert>
+    <update id="AccountDel" parameterType="hashmap">
+        UPDATE account
+        SET del_yn = 1
+        WHERE seq = #{seq ,jdbcType=INTEGER}
+    </update>
 
     <select id="account_login" parameterType="hashmap" resultType="hashmap">
         select seq, user_id, user_pwd
