@@ -1,0 +1,1069 @@
+INFO  2024-04-19 15:19:02.062 [restartedMain] [AutocallApplication:55] - Starting AutocallApplication using Java 1.8.0_361 on DESKTOP-5BDQ2AQ with PID 13048 (C:\Users\82106\IdeaProjects\실무\autocall2\autocall\build\classes\java\main started by 이상민 in C:\Users\82106\IdeaProjects\실무\autocall2\autocall)
+DEBUG 2024-04-19 15:19:02.069 [restartedMain] [AutocallApplication:56] - Running with Spring Boot v2.7.14, Spring v5.3.29
+INFO  2024-04-19 15:19:02.070 [restartedMain] [AutocallApplication:631] - No active profile set, falling back to 1 default profile: "default"
+INFO  2024-04-19 15:19:02.355 [restartedMain] [DevToolsPropertyDefaultsPostProcessor:255] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+INFO  2024-04-19 15:19:02.356 [restartedMain] [DevToolsPropertyDefaultsPostProcessor:255] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+WARN  2024-04-19 15:19:03.701 [restartedMain] [ClassPathMapperScanner:44] - No MyBatis mapper was found in '[com.vdc.autocall]' package. Please check your configuration.
+INFO  2024-04-19 15:19:04.912 [restartedMain] [TomcatWebServer:108] - Tomcat initialized with port(s): 8080 (http)
+INFO  2024-04-19 15:19:04.921 [restartedMain] [Http11NioProtocol:173] - Initializing ProtocolHandler ["http-nio-8080"]
+INFO  2024-04-19 15:19:04.923 [restartedMain] [StandardService:173] - Starting service [Tomcat]
+INFO  2024-04-19 15:19:04.924 [restartedMain] [StandardEngine:173] - Starting Servlet engine: [Apache Tomcat/9.0.78]
+INFO  2024-04-19 15:19:05.045 [restartedMain] [[/autodial]:173] - Initializing Spring embedded WebApplicationContext
+INFO  2024-04-19 15:19:05.046 [restartedMain] [ServletWebServerApplicationContext:292] - Root WebApplicationContext: initialization completed in 2690 ms
+INFO  2024-04-19 15:19:05.133 [restartedMain] [HikariDataSource:80] - HikariPool-1 - Starting...
+INFO  2024-04-19 15:19:05.315 [restartedMain] [HikariDataSource:82] - HikariPool-1 - Start completed.
+DEBUG 2024-04-19 15:19:05.325 [restartedMain] [DatabaseConfig$$EnhancerBySpringCGLIB$$ff0594dc:42] - SqlSessionFactory Start
+WARN  2024-04-19 15:19:05.855 [restartedMain] [OptionalLiveReloadServer:62] - Unable to start LiveReload server
+INFO  2024-04-19 15:19:05.873 [restartedMain] [Http11NioProtocol:173] - Starting ProtocolHandler ["http-nio-8080"]
+INFO  2024-04-19 15:19:05.888 [restartedMain] [TomcatWebServer:220] - Tomcat started on port(s): 8080 (http) with context path '/autodial'
+INFO  2024-04-19 15:19:05.899 [restartedMain] [AutocallApplication:61] - Started AutocallApplication in 4.776 seconds (JVM running for 6.934)
+INFO  2024-04-19 15:19:39.689 [http-nio-8080-exec-2] [[/autodial]:173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+INFO  2024-04-19 15:19:39.690 [http-nio-8080-exec-2] [DispatcherServlet:525] - Initializing Servlet 'dispatcherServlet'
+INFO  2024-04-19 15:19:39.692 [http-nio-8080-exec-2] [DispatcherServlet:547] - Completed initialization in 1 ms
+DEBUG 2024-04-19 15:19:39.713 [http-nio-8080-exec-3] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2024-04-19 15:19:39.714 [http-nio-8080-exec-3] [LoggerInterceptor:21] - Request URI ===> /autodial/login
+DEBUG 2024-04-19 15:19:39.721 [http-nio-8080-exec-3] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2024-04-19 15:19:42.792 [http-nio-8080-exec-6] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2024-04-19 15:19:42.792 [http-nio-8080-exec-6] [LoggerInterceptor:21] - Request URI ===> /autodial/login/proc
+DEBUG 2024-04-19 15:19:42.833 [http-nio-8080-exec-6] [ArgumentResolver:54] - ##### XSSParam key : user_id, value : 1000
+DEBUG 2024-04-19 15:19:42.833 [http-nio-8080-exec-6] [ArgumentResolver:54] - ##### XSSParam key : user_pwd, value : 1111
+DEBUG 2024-04-19 15:19:42.840 [http-nio-8080-exec-6] [AbstractDAO:15] - 	 QueryId  	:  Account.account_login
+DEBUG 2024-04-19 15:19:42.859 [http-nio-8080-exec-6] [sqlonly:223] -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select seq, user_id, user_pwd
+        from account
+        where user_id = '1000'
+        and user_pwd =SHA2('1111', 256)
+        and del_yn = 0
+
+INFO  2024-04-19 15:19:42.883 [http-nio-8080-exec-6] [WebSessionListener:76] - currentSessionUserList -> user_id : 1000 
+DEBUG 2024-04-19 15:19:42.905 [http-nio-8080-exec-6] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2024-04-19 15:19:42.914 [http-nio-8080-exec-7] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2024-04-19 15:19:42.915 [http-nio-8080-exec-7] [LoggerInterceptor:21] - Request URI ===> /autodial/main
+DEBUG 2024-04-19 15:19:42.915 [http-nio-8080-exec-7] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2024-04-19 15:19:43.494 [http-nio-8080-exec-3] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2024-04-19 15:19:43.494 [http-nio-8080-exec-3] [LoggerInterceptor:21] - Request URI ===> /autodial/img/vodacom.png
+DEBUG 2024-04-19 15:19:43.495 [http-nio-8080-exec-8] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2024-04-19 15:19:43.496 [http-nio-8080-exec-8] [LoggerInterceptor:21] - Request URI ===> /autodial/img/logo.png
+DEBUG 2024-04-19 15:19:43.498 [http-nio-8080-exec-3] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2024-04-19 15:19:43.500 [http-nio-8080-exec-8] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2024-04-19 15:19:43.578 [http-nio-8080-exec-10] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2024-04-19 15:19:43.578 [http-nio-8080-exec-5] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2024-04-19 15:19:43.578 [http-nio-8080-exec-10] [LoggerInterceptor:21] - Request URI ===> /autodial/webfonts/fa-light-300.woff2
+DEBUG 2024-04-19 15:19:43.578 [http-nio-8080-exec-5] [LoggerInterceptor:21] - Request URI ===> /autodial/webfonts/nextgen-icons.woff2
+DEBUG 2024-04-19 15:19:43.581 [http-nio-8080-exec-5] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2024-04-19 15:19:43.583 [http-nio-8080-exec-10] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2024-04-19 15:19:43.737 [http-nio-8080-exec-3] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2024-04-19 15:19:43.738 [http-nio-8080-exec-3] [LoggerInterceptor:21] - Request URI ===> /autodial/list
+DEBUG 2024-04-19 15:19:43.746 [http-nio-8080-exec-3] [AbstractDAO:15] - 	 QueryId  	:  Device.DeviceList
+DEBUG 2024-04-19 15:19:43.748 [http-nio-8080-exec-3] [sqlonly:223] -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT seq, lte_phone, cid_number,
+               DATE_FORMAT(reg_dt, '%Y/%m/%d %k:%i') AS reg_dt,
+               DATE_FORMAT(last_edt_dt, '%Y/%m/%d %k:%i') AS last_edt_dt
+        FROM device
+        WHERE del_stat = 0
+
+DEBUG 2024-04-19 15:19:43.754 [http-nio-8080-exec-3] [LoggerInterceptor:31] - ==================== END ======================
+INFO  2024-04-19 15:20:17.270 [SpringApplicationShutdownHook] [HikariDataSource:350] - HikariPool-1 - Shutdown initiated...
+INFO  2024-04-19 15:20:17.283 [SpringApplicationShutdownHook] [HikariDataSource:352] - HikariPool-1 - Shutdown completed.
+INFO  2024-04-19 15:20:24.409 [restartedMain] [AutocallApplication:55] - Starting AutocallApplication using Java 1.8.0_361 on DESKTOP-5BDQ2AQ with PID 18876 (C:\Users\82106\IdeaProjects\실무\autocall2\autocall\build\classes\java\main started by 이상민 in C:\Users\82106\IdeaProjects\실무\autocall2\autocall)
+DEBUG 2024-04-19 15:20:24.415 [restartedMain] [AutocallApplication:56] - Running with Spring Boot v2.7.14, Spring v5.3.29
+INFO  2024-04-19 15:20:24.419 [restartedMain] [AutocallApplication:631] - No active profile set, falling back to 1 default profile: "default"
+INFO  2024-04-19 15:20:25.420 [restartedMain] [DevToolsPropertyDefaultsPostProcessor:255] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+INFO  2024-04-19 15:20:25.422 [restartedMain] [DevToolsPropertyDefaultsPostProcessor:255] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+WARN  2024-04-19 15:20:27.549 [restartedMain] [ClassPathMapperScanner:44] - No MyBatis mapper was found in '[com.vdc.autocall]' package. Please check your configuration.
+INFO  2024-04-19 15:20:29.152 [restartedMain] [TomcatWebServer:108] - Tomcat initialized with port(s): 8078 (http)
+INFO  2024-04-19 15:20:29.177 [restartedMain] [Http11NioProtocol:173] - Initializing ProtocolHandler ["http-nio-8078"]
+INFO  2024-04-19 15:20:29.183 [restartedMain] [StandardService:173] - Starting service [Tomcat]
+INFO  2024-04-19 15:20:29.184 [restartedMain] [StandardEngine:173] - Starting Servlet engine: [Apache Tomcat/9.0.78]
+INFO  2024-04-19 15:20:29.550 [restartedMain] [[/autodial]:173] - Initializing Spring embedded WebApplicationContext
+INFO  2024-04-19 15:20:29.551 [restartedMain] [ServletWebServerApplicationContext:292] - Root WebApplicationContext: initialization completed in 4127 ms
+INFO  2024-04-19 15:20:29.816 [restartedMain] [HikariDataSource:80] - HikariPool-1 - Starting...
+INFO  2024-04-19 15:20:30.197 [restartedMain] [HikariDataSource:82] - HikariPool-1 - Start completed.
+DEBUG 2024-04-19 15:20:30.211 [restartedMain] [DatabaseConfig$$EnhancerBySpringCGLIB$$295e001a:42] - SqlSessionFactory Start
+WARN  2024-04-19 15:20:32.540 [restartedMain] [OptionalLiveReloadServer:62] - Unable to start LiveReload server
+INFO  2024-04-19 15:20:32.580 [restartedMain] [Http11NioProtocol:173] - Starting ProtocolHandler ["http-nio-8078"]
+INFO  2024-04-19 15:20:32.663 [restartedMain] [TomcatWebServer:220] - Tomcat started on port(s): 8078 (http) with context path '/autodial'
+INFO  2024-04-19 15:20:32.709 [restartedMain] [AutocallApplication:61] - Started AutocallApplication in 10.058 seconds (JVM running for 13.463)
+INFO  2024-04-19 15:20:50.302 [http-nio-8078-exec-2] [[/autodial]:173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+INFO  2024-04-19 15:20:50.303 [http-nio-8078-exec-2] [DispatcherServlet:525] - Initializing Servlet 'dispatcherServlet'
+INFO  2024-04-19 15:20:50.306 [http-nio-8078-exec-2] [DispatcherServlet:547] - Completed initialization in 2 ms
+DEBUG 2024-04-19 15:20:50.503 [http-nio-8078-exec-6] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2024-04-19 15:20:50.507 [http-nio-8078-exec-6] [LoggerInterceptor:21] - Request URI ===> /autodial/login
+DEBUG 2024-04-19 15:20:50.577 [http-nio-8078-exec-6] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2024-04-19 15:20:54.776 [http-nio-8078-exec-9] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2024-04-19 15:20:54.776 [http-nio-8078-exec-9] [LoggerInterceptor:21] - Request URI ===> /autodial/login/proc
+DEBUG 2024-04-19 15:20:54.837 [http-nio-8078-exec-9] [ArgumentResolver:54] - ##### XSSParam key : user_id, value : 1000
+DEBUG 2024-04-19 15:20:54.838 [http-nio-8078-exec-9] [ArgumentResolver:54] - ##### XSSParam key : user_pwd, value : 1111
+DEBUG 2024-04-19 15:20:54.845 [http-nio-8078-exec-9] [AbstractDAO:15] - 	 QueryId  	:  Account.account_login
+DEBUG 2024-04-19 15:20:54.874 [http-nio-8078-exec-9] [sqlonly:223] -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select seq, user_id, user_pwd
+        from account
+        where user_id = '1000'
+        and user_pwd =SHA2('1111', 256)
+        and del_yn = 0
+
+INFO  2024-04-19 15:20:54.903 [http-nio-8078-exec-9] [WebSessionListener:76] - currentSessionUserList -> user_id : 1000 
+DEBUG 2024-04-19 15:20:54.935 [http-nio-8078-exec-9] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2024-04-19 15:20:54.946 [http-nio-8078-exec-10] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2024-04-19 15:20:54.946 [http-nio-8078-exec-10] [LoggerInterceptor:21] - Request URI ===> /autodial/main
+DEBUG 2024-04-19 15:20:54.947 [http-nio-8078-exec-10] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2024-04-19 15:20:55.694 [http-nio-8078-exec-10] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2024-04-19 15:20:55.696 [http-nio-8078-exec-10] [LoggerInterceptor:21] - Request URI ===> /autodial/img/vodacom.png
+DEBUG 2024-04-19 15:20:55.700 [http-nio-8078-exec-8] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2024-04-19 15:20:55.701 [http-nio-8078-exec-8] [LoggerInterceptor:21] - Request URI ===> /autodial/img/logo.png
+DEBUG 2024-04-19 15:20:55.702 [http-nio-8078-exec-10] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2024-04-19 15:20:55.705 [http-nio-8078-exec-8] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2024-04-19 15:20:55.784 [http-nio-8078-exec-3] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2024-04-19 15:20:55.784 [http-nio-8078-exec-9] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2024-04-19 15:20:55.785 [http-nio-8078-exec-9] [LoggerInterceptor:21] - Request URI ===> /autodial/webfonts/nextgen-icons.woff2
+DEBUG 2024-04-19 15:20:55.785 [http-nio-8078-exec-3] [LoggerInterceptor:21] - Request URI ===> /autodial/webfonts/fa-light-300.woff2
+DEBUG 2024-04-19 15:20:55.790 [http-nio-8078-exec-9] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2024-04-19 15:20:55.792 [http-nio-8078-exec-3] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2024-04-19 15:20:55.975 [http-nio-8078-exec-10] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2024-04-19 15:20:55.976 [http-nio-8078-exec-10] [LoggerInterceptor:21] - Request URI ===> /autodial/list
+DEBUG 2024-04-19 15:20:55.987 [http-nio-8078-exec-10] [AbstractDAO:15] - 	 QueryId  	:  Device.DeviceList
+DEBUG 2024-04-19 15:20:55.992 [http-nio-8078-exec-10] [sqlonly:223] -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT seq, lte_phone, cid_number,
+               DATE_FORMAT(reg_dt, '%Y/%m/%d %k:%i') AS reg_dt,
+               DATE_FORMAT(last_edt_dt, '%Y/%m/%d %k:%i') AS last_edt_dt
+        FROM device
+        WHERE del_stat = 0
+
+DEBUG 2024-04-19 15:20:55.997 [http-nio-8078-exec-10] [LoggerInterceptor:31] - ==================== END ======================
+INFO  2024-04-19 15:27:14.994 [SpringApplicationShutdownHook] [HikariDataSource:350] - HikariPool-1 - Shutdown initiated...
+INFO  2024-04-19 15:27:15.009 [SpringApplicationShutdownHook] [HikariDataSource:352] - HikariPool-1 - Shutdown completed.
+INFO  2024-04-19 15:38:07.703 [restartedMain] [AutocallApplication:55] - Starting AutocallApplication using Java 1.8.0_361 on DESKTOP-5BDQ2AQ with PID 16396 (C:\Users\82106\IdeaProjects\실무\autocall2\autocall\build\classes\java\main started by 이상민 in C:\Users\82106\IdeaProjects\실무\autocall2\autocall)
+DEBUG 2024-04-19 15:38:07.704 [restartedMain] [AutocallApplication:56] - Running with Spring Boot v2.7.14, Spring v5.3.29
+INFO  2024-04-19 15:38:07.705 [restartedMain] [AutocallApplication:631] - No active profile set, falling back to 1 default profile: "default"
+INFO  2024-04-19 15:38:07.873 [restartedMain] [DevToolsPropertyDefaultsPostProcessor:255] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+INFO  2024-04-19 15:38:07.873 [restartedMain] [DevToolsPropertyDefaultsPostProcessor:255] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+WARN  2024-04-19 15:38:08.344 [restartedMain] [ClassPathMapperScanner:44] - No MyBatis mapper was found in '[com.vdc.autocall]' package. Please check your configuration.
+INFO  2024-04-19 15:38:08.630 [restartedMain] [TomcatWebServer:108] - Tomcat initialized with port(s): 8078 (http)
+INFO  2024-04-19 15:38:08.635 [restartedMain] [Http11NioProtocol:173] - Initializing ProtocolHandler ["http-nio-8078"]
+INFO  2024-04-19 15:38:08.636 [restartedMain] [StandardService:173] - Starting service [Tomcat]
+INFO  2024-04-19 15:38:08.636 [restartedMain] [StandardEngine:173] - Starting Servlet engine: [Apache Tomcat/9.0.78]
+INFO  2024-04-19 15:38:08.683 [restartedMain] [[/autodial]:173] - Initializing Spring embedded WebApplicationContext
+INFO  2024-04-19 15:38:08.683 [restartedMain] [ServletWebServerApplicationContext:292] - Root WebApplicationContext: initialization completed in 809 ms
+INFO  2024-04-19 15:38:08.732 [restartedMain] [HikariDataSource:80] - HikariPool-1 - Starting...
+WARN  2024-04-19 15:38:08.768 [restartedMain] [ErrorPacket:100] - Error: 1045-28000: Access denied for user 'root'@'localhost' (using password: YES)
+ERROR 2024-04-19 15:38:09.809 [restartedMain] [HikariPool:594] - HikariPool-1 - Exception during pool initialization.
+java.sql.SQLInvalidAuthorizationSpecException: (conn=3398) Access denied for user 'root'@'localhost' (using password: YES)
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:286)
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:370)
+	at org.mariadb.jdbc.client.impl.ConnectionHelper.authenticationHandler(ConnectionHelper.java:284)
+	at org.mariadb.jdbc.client.impl.StandardClient.<init>(StandardClient.java:185)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:70)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:101)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:27)
+	at net.sf.log4jdbc.sql.jdbcapi.DriverSpy.connect(DriverSpy.java:401)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at com.vdc.autocall.configuration.DatabaseConfig.DataSourceMain(DatabaseConfig.java:36)
+	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$7037cf7f.CGLIB$DataSourceMain$2(<generated>)
+	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$7037cf7f$$FastClassBySpringCGLIB$$b9a24ad8.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$7037cf7f.DataSourceMain(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:486)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:541)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:479)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:479)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:479)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:921)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.vdc.autocall.AutocallApplication.main(AutocallApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+WARN  2024-04-19 15:38:09.815 [restartedMain] [AnnotationConfigServletWebServerApplicationContext:591] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=3398) Access denied for user 'root'@'localhost' (using password: YES)
+INFO  2024-04-19 15:38:09.817 [restartedMain] [StandardService:173] - Stopping service [Tomcat]
+INFO  2024-04-19 15:38:09.826 [restartedMain] [ConditionEvaluationReportLoggingListener:136] - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+ERROR 2024-04-19 15:38:09.844 [restartedMain] [SpringApplication:821] - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=3398) Access denied for user 'root'@'localhost' (using password: YES)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:921)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.vdc.autocall.AutocallApplication.main(AutocallApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=3398) Access denied for user 'root'@'localhost' (using password: YES)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:479)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	... 22 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=3398) Access denied for user 'root'@'localhost' (using password: YES)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:479)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	... 36 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=3398) Access denied for user 'root'@'localhost' (using password: YES)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:541)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:479)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	... 50 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=3398) Access denied for user 'root'@'localhost' (using password: YES)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:486)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 68 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=3398) Access denied for user 'root'@'localhost' (using password: YES)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 82 common frames omitted
+Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=3398) Access denied for user 'root'@'localhost' (using password: YES)
+	at com.zaxxer.hikari.pool.HikariPool.throwPoolInitializationException(HikariPool.java:596)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:582)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at com.vdc.autocall.configuration.DatabaseConfig.DataSourceMain(DatabaseConfig.java:36)
+	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$7037cf7f.CGLIB$DataSourceMain$2(<generated>)
+	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$7037cf7f$$FastClassBySpringCGLIB$$b9a24ad8.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$7037cf7f.DataSourceMain(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 83 common frames omitted
+Caused by: java.sql.SQLInvalidAuthorizationSpecException: (conn=3398) Access denied for user 'root'@'localhost' (using password: YES)
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:286)
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:370)
+	at org.mariadb.jdbc.client.impl.ConnectionHelper.authenticationHandler(ConnectionHelper.java:284)
+	at org.mariadb.jdbc.client.impl.StandardClient.<init>(StandardClient.java:185)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:70)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:101)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:27)
+	at net.sf.log4jdbc.sql.jdbcapi.DriverSpy.connect(DriverSpy.java:401)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	... 96 common frames omitted
+INFO  2024-04-19 15:38:41.849 [restartedMain] [AutocallApplication:55] - Starting AutocallApplication using Java 1.8.0_361 on DESKTOP-5BDQ2AQ with PID 11636 (C:\Users\82106\IdeaProjects\실무\autocall2\autocall\build\classes\java\main started by 이상민 in C:\Users\82106\IdeaProjects\실무\autocall2\autocall)
+DEBUG 2024-04-19 15:38:41.850 [restartedMain] [AutocallApplication:56] - Running with Spring Boot v2.7.14, Spring v5.3.29
+INFO  2024-04-19 15:38:41.850 [restartedMain] [AutocallApplication:631] - No active profile set, falling back to 1 default profile: "default"
+INFO  2024-04-19 15:38:42.054 [restartedMain] [DevToolsPropertyDefaultsPostProcessor:255] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+INFO  2024-04-19 15:38:42.054 [restartedMain] [DevToolsPropertyDefaultsPostProcessor:255] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+WARN  2024-04-19 15:38:42.759 [restartedMain] [ClassPathMapperScanner:44] - No MyBatis mapper was found in '[com.vdc.autocall]' package. Please check your configuration.
+INFO  2024-04-19 15:38:43.632 [restartedMain] [TomcatWebServer:108] - Tomcat initialized with port(s): 8078 (http)
+INFO  2024-04-19 15:38:43.647 [restartedMain] [Http11NioProtocol:173] - Initializing ProtocolHandler ["http-nio-8078"]
+INFO  2024-04-19 15:38:43.658 [restartedMain] [StandardService:173] - Starting service [Tomcat]
+INFO  2024-04-19 15:38:43.659 [restartedMain] [StandardEngine:173] - Starting Servlet engine: [Apache Tomcat/9.0.78]
+INFO  2024-04-19 15:38:43.806 [restartedMain] [[/autodial]:173] - Initializing Spring embedded WebApplicationContext
+INFO  2024-04-19 15:38:43.807 [restartedMain] [ServletWebServerApplicationContext:292] - Root WebApplicationContext: initialization completed in 1752 ms
+INFO  2024-04-19 15:38:43.912 [restartedMain] [HikariDataSource:80] - HikariPool-1 - Starting...
+WARN  2024-04-19 15:38:43.990 [restartedMain] [ErrorPacket:100] - Error: 1045-28000: Access denied for user 'root'@'192.168.101.150' (using password: YES)
+ERROR 2024-04-19 15:38:45.058 [restartedMain] [HikariPool:594] - HikariPool-1 - Exception during pool initialization.
+java.sql.SQLInvalidAuthorizationSpecException: (conn=38360) Access denied for user 'root'@'192.168.101.150' (using password: YES)
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:286)
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:370)
+	at org.mariadb.jdbc.client.impl.ConnectionHelper.authenticationHandler(ConnectionHelper.java:284)
+	at org.mariadb.jdbc.client.impl.StandardClient.<init>(StandardClient.java:185)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:70)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:101)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:27)
+	at net.sf.log4jdbc.sql.jdbcapi.DriverSpy.connect(DriverSpy.java:401)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at com.vdc.autocall.configuration.DatabaseConfig.DataSourceMain(DatabaseConfig.java:36)
+	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$4d04e738.CGLIB$DataSourceMain$3(<generated>)
+	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$4d04e738$$FastClassBySpringCGLIB$$3b7a34b4.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$4d04e738.DataSourceMain(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:486)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:541)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:479)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:479)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:479)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:921)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.vdc.autocall.AutocallApplication.main(AutocallApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+WARN  2024-04-19 15:38:45.064 [restartedMain] [AnnotationConfigServletWebServerApplicationContext:591] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=38360) Access denied for user 'root'@'192.168.101.150' (using password: YES)
+INFO  2024-04-19 15:38:45.067 [restartedMain] [StandardService:173] - Stopping service [Tomcat]
+INFO  2024-04-19 15:38:45.083 [restartedMain] [ConditionEvaluationReportLoggingListener:136] - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+ERROR 2024-04-19 15:38:45.117 [restartedMain] [SpringApplication:821] - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=38360) Access denied for user 'root'@'192.168.101.150' (using password: YES)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:921)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.vdc.autocall.AutocallApplication.main(AutocallApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=38360) Access denied for user 'root'@'192.168.101.150' (using password: YES)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:479)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	... 22 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=38360) Access denied for user 'root'@'192.168.101.150' (using password: YES)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:479)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	... 36 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=38360) Access denied for user 'root'@'192.168.101.150' (using password: YES)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:541)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:479)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	... 50 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=38360) Access denied for user 'root'@'192.168.101.150' (using password: YES)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:486)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 68 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=38360) Access denied for user 'root'@'192.168.101.150' (using password: YES)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 82 common frames omitted
+Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=38360) Access denied for user 'root'@'192.168.101.150' (using password: YES)
+	at com.zaxxer.hikari.pool.HikariPool.throwPoolInitializationException(HikariPool.java:596)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:582)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at com.vdc.autocall.configuration.DatabaseConfig.DataSourceMain(DatabaseConfig.java:36)
+	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$4d04e738.CGLIB$DataSourceMain$3(<generated>)
+	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$4d04e738$$FastClassBySpringCGLIB$$3b7a34b4.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$4d04e738.DataSourceMain(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 83 common frames omitted
+Caused by: java.sql.SQLInvalidAuthorizationSpecException: (conn=38360) Access denied for user 'root'@'192.168.101.150' (using password: YES)
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:286)
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:370)
+	at org.mariadb.jdbc.client.impl.ConnectionHelper.authenticationHandler(ConnectionHelper.java:284)
+	at org.mariadb.jdbc.client.impl.StandardClient.<init>(StandardClient.java:185)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:70)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:101)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:27)
+	at net.sf.log4jdbc.sql.jdbcapi.DriverSpy.connect(DriverSpy.java:401)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	... 96 common frames omitted
+INFO  2024-04-19 15:39:06.586 [restartedMain] [AutocallApplication:55] - Starting AutocallApplication using Java 1.8.0_361 on DESKTOP-5BDQ2AQ with PID 10464 (C:\Users\82106\IdeaProjects\실무\autocall2\autocall\build\classes\java\main started by 이상민 in C:\Users\82106\IdeaProjects\실무\autocall2\autocall)
+DEBUG 2024-04-19 15:39:06.587 [restartedMain] [AutocallApplication:56] - Running with Spring Boot v2.7.14, Spring v5.3.29
+INFO  2024-04-19 15:39:06.588 [restartedMain] [AutocallApplication:631] - No active profile set, falling back to 1 default profile: "default"
+INFO  2024-04-19 15:39:06.776 [restartedMain] [DevToolsPropertyDefaultsPostProcessor:255] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+INFO  2024-04-19 15:39:06.776 [restartedMain] [DevToolsPropertyDefaultsPostProcessor:255] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+WARN  2024-04-19 15:39:07.336 [restartedMain] [ClassPathMapperScanner:44] - No MyBatis mapper was found in '[com.vdc.autocall]' package. Please check your configuration.
+INFO  2024-04-19 15:39:07.727 [restartedMain] [TomcatWebServer:108] - Tomcat initialized with port(s): 8078 (http)
+INFO  2024-04-19 15:39:07.732 [restartedMain] [Http11NioProtocol:173] - Initializing ProtocolHandler ["http-nio-8078"]
+INFO  2024-04-19 15:39:07.734 [restartedMain] [StandardService:173] - Starting service [Tomcat]
+INFO  2024-04-19 15:39:07.734 [restartedMain] [StandardEngine:173] - Starting Servlet engine: [Apache Tomcat/9.0.78]
+INFO  2024-04-19 15:39:07.807 [restartedMain] [[/autodial]:173] - Initializing Spring embedded WebApplicationContext
+INFO  2024-04-19 15:39:07.807 [restartedMain] [ServletWebServerApplicationContext:292] - Root WebApplicationContext: initialization completed in 1031 ms
+INFO  2024-04-19 15:39:07.887 [restartedMain] [HikariDataSource:80] - HikariPool-1 - Starting...
+INFO  2024-04-19 15:39:08.018 [restartedMain] [HikariDataSource:82] - HikariPool-1 - Start completed.
+DEBUG 2024-04-19 15:39:08.025 [restartedMain] [DatabaseConfig$$EnhancerBySpringCGLIB$$5cc74028:42] - SqlSessionFactory Start
+WARN  2024-04-19 15:39:08.549 [restartedMain] [OptionalLiveReloadServer:62] - Unable to start LiveReload server
+INFO  2024-04-19 15:39:08.564 [restartedMain] [Http11NioProtocol:173] - Starting ProtocolHandler ["http-nio-8078"]
+INFO  2024-04-19 15:39:08.581 [restartedMain] [TomcatWebServer:220] - Tomcat started on port(s): 8078 (http) with context path '/autodial'
+INFO  2024-04-19 15:39:08.596 [restartedMain] [AutocallApplication:61] - Started AutocallApplication in 2.883 seconds (JVM running for 3.408)
+INFO  2024-04-19 15:39:14.924 [http-nio-8078-exec-1] [[/autodial]:173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+INFO  2024-04-19 15:39:14.924 [http-nio-8078-exec-1] [DispatcherServlet:525] - Initializing Servlet 'dispatcherServlet'
+INFO  2024-04-19 15:39:14.925 [http-nio-8078-exec-1] [DispatcherServlet:547] - Completed initialization in 1 ms
+DEBUG 2024-04-19 15:39:14.943 [http-nio-8078-exec-1] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2024-04-19 15:39:14.944 [http-nio-8078-exec-1] [LoggerInterceptor:21] - Request URI ===> /autodial/main
+DEBUG 2024-04-19 15:39:14.949 [http-nio-8078-exec-1] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2024-04-19 15:39:15.487 [http-nio-8078-exec-1] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2024-04-19 15:39:15.487 [http-nio-8078-exec-1] [LoggerInterceptor:21] - Request URI ===> /autodial/img/vodacom.png
+DEBUG 2024-04-19 15:39:15.487 [http-nio-8078-exec-2] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2024-04-19 15:39:15.487 [http-nio-8078-exec-2] [LoggerInterceptor:21] - Request URI ===> /autodial/img/logo.png
+DEBUG 2024-04-19 15:39:15.491 [http-nio-8078-exec-1] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2024-04-19 15:39:15.493 [http-nio-8078-exec-2] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2024-04-19 15:39:15.537 [http-nio-8078-exec-8] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2024-04-19 15:39:15.537 [http-nio-8078-exec-9] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2024-04-19 15:39:15.538 [http-nio-8078-exec-8] [LoggerInterceptor:21] - Request URI ===> /autodial/webfonts/fa-light-300.woff2
+DEBUG 2024-04-19 15:39:15.538 [http-nio-8078-exec-9] [LoggerInterceptor:21] - Request URI ===> /autodial/webfonts/nextgen-icons.woff2
+DEBUG 2024-04-19 15:39:15.540 [http-nio-8078-exec-9] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2024-04-19 15:39:15.541 [http-nio-8078-exec-8] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2024-04-19 15:39:15.625 [http-nio-8078-exec-10] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2024-04-19 15:39:15.625 [http-nio-8078-exec-10] [LoggerInterceptor:21] - Request URI ===> /autodial/list
+DEBUG 2024-04-19 15:39:15.695 [http-nio-8078-exec-10] [AbstractDAO:15] - 	 QueryId  	:  Device.DeviceList
+DEBUG 2024-04-19 15:39:15.723 [http-nio-8078-exec-10] [sqlonly:223] -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT seq, lte_phone, cid_number,
+               DATE_FORMAT(reg_dt, '%Y/%m/%d %k:%i') AS reg_dt,
+               DATE_FORMAT(last_edt_dt, '%Y/%m/%d %k:%i') AS last_edt_dt
+        FROM device
+        WHERE del_stat = 0
+
+DEBUG 2024-04-19 15:39:15.749 [http-nio-8078-exec-10] [LoggerInterceptor:31] - ==================== END ======================
+INFO  2024-04-19 15:39:41.953 [File Watcher] [LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener:211] - Restarting due to 57 class path changes (0 additions, 0 deletions, 57 modifications)
+INFO  2024-04-19 15:39:42.057 [Thread-2] [Http11NioProtocol:173] - Pausing ProtocolHandler ["http-nio-8078"]
+INFO  2024-04-19 15:39:42.058 [Thread-2] [StandardService:173] - Stopping service [Tomcat]
+INFO  2024-04-19 15:39:42.059 [Thread-2] [[/autodial]:173] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+INFO  2024-04-19 15:39:42.061 [Thread-2] [Http11NioProtocol:173] - Stopping ProtocolHandler ["http-nio-8078"]
+INFO  2024-04-19 15:39:42.063 [Thread-2] [Http11NioProtocol:173] - Destroying ProtocolHandler ["http-nio-8078"]
+INFO  2024-04-19 15:39:42.064 [Thread-2] [HikariDataSource:350] - HikariPool-1 - Shutdown initiated...
+INFO  2024-04-19 15:39:42.077 [Thread-2] [HikariDataSource:352] - HikariPool-1 - Shutdown completed.
+INFO  2024-04-19 15:39:42.662 [restartedMain] [AutocallApplication:55] - Starting AutocallApplication using Java 1.8.0_361 on DESKTOP-5BDQ2AQ with PID 10464 (C:\Users\82106\IdeaProjects\실무\autocall2\autocall\build\classes\java\main started by 이상민 in C:\Users\82106\IdeaProjects\실무\autocall2\autocall)
+DEBUG 2024-04-19 15:39:42.663 [restartedMain] [AutocallApplication:56] - Running with Spring Boot v2.7.14, Spring v5.3.29
+INFO  2024-04-19 15:39:42.663 [restartedMain] [AutocallApplication:631] - No active profile set, falling back to 1 default profile: "default"
+WARN  2024-04-19 15:39:42.931 [restartedMain] [ClassPathMapperScanner:44] - No MyBatis mapper was found in '[com.vdc.autocall]' package. Please check your configuration.
+INFO  2024-04-19 15:39:43.010 [restartedMain] [TomcatWebServer:108] - Tomcat initialized with port(s): 8078 (http)
+INFO  2024-04-19 15:39:43.011 [restartedMain] [Http11NioProtocol:173] - Initializing ProtocolHandler ["http-nio-8078"]
+INFO  2024-04-19 15:39:43.012 [restartedMain] [StandardService:173] - Starting service [Tomcat]
+INFO  2024-04-19 15:39:43.012 [restartedMain] [StandardEngine:173] - Starting Servlet engine: [Apache Tomcat/9.0.78]
+INFO  2024-04-19 15:39:43.034 [restartedMain] [[/autodial]:173] - Initializing Spring embedded WebApplicationContext
+INFO  2024-04-19 15:39:43.034 [restartedMain] [ServletWebServerApplicationContext:292] - Root WebApplicationContext: initialization completed in 368 ms
+INFO  2024-04-19 15:39:43.075 [restartedMain] [HikariDataSource:80] - HikariPool-2 - Starting...
+WARN  2024-04-19 15:39:43.081 [restartedMain] [ErrorPacket:100] - Error: 1045-28000: Access denied for user 'vdc'@'localhost' (using password: YES)
+ERROR 2024-04-19 15:39:44.100 [restartedMain] [HikariPool:594] - HikariPool-2 - Exception during pool initialization.
+java.sql.SQLInvalidAuthorizationSpecException: (conn=3399) Access denied for user 'vdc'@'localhost' (using password: YES)
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:286)
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:370)
+	at org.mariadb.jdbc.client.impl.ConnectionHelper.authenticationHandler(ConnectionHelper.java:284)
+	at org.mariadb.jdbc.client.impl.StandardClient.<init>(StandardClient.java:185)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:70)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:101)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:27)
+	at net.sf.log4jdbc.sql.jdbcapi.DriverSpy.connect(DriverSpy.java:401)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at com.vdc.autocall.configuration.DatabaseConfig.DataSourceMain(DatabaseConfig.java:36)
+	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$5cc74028.CGLIB$DataSourceMain$1(<generated>)
+	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$5cc74028$$FastClassBySpringCGLIB$$c59033ed.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$5cc74028.DataSourceMain(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:486)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:541)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:479)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:479)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:479)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:921)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.vdc.autocall.AutocallApplication.main(AutocallApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+WARN  2024-04-19 15:39:44.105 [restartedMain] [AnnotationConfigServletWebServerApplicationContext:591] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=3399) Access denied for user 'vdc'@'localhost' (using password: YES)
+INFO  2024-04-19 15:39:44.106 [restartedMain] [StandardService:173] - Stopping service [Tomcat]
+INFO  2024-04-19 15:39:44.116 [restartedMain] [ConditionEvaluationReportLoggingListener:136] - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+ERROR 2024-04-19 15:39:44.148 [restartedMain] [SpringApplication:821] - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=3399) Access denied for user 'vdc'@'localhost' (using password: YES)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:921)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.vdc.autocall.AutocallApplication.main(AutocallApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=3399) Access denied for user 'vdc'@'localhost' (using password: YES)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:479)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	... 22 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=3399) Access denied for user 'vdc'@'localhost' (using password: YES)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:479)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	... 36 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=3399) Access denied for user 'vdc'@'localhost' (using password: YES)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:541)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:479)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	... 50 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=3399) Access denied for user 'vdc'@'localhost' (using password: YES)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:486)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 68 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=3399) Access denied for user 'vdc'@'localhost' (using password: YES)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 82 common frames omitted
+Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=3399) Access denied for user 'vdc'@'localhost' (using password: YES)
+	at com.zaxxer.hikari.pool.HikariPool.throwPoolInitializationException(HikariPool.java:596)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:582)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at com.vdc.autocall.configuration.DatabaseConfig.DataSourceMain(DatabaseConfig.java:36)
+	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$5cc74028.CGLIB$DataSourceMain$1(<generated>)
+	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$5cc74028$$FastClassBySpringCGLIB$$c59033ed.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$5cc74028.DataSourceMain(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 83 common frames omitted
+Caused by: java.sql.SQLInvalidAuthorizationSpecException: (conn=3399) Access denied for user 'vdc'@'localhost' (using password: YES)
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:286)
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:370)
+	at org.mariadb.jdbc.client.impl.ConnectionHelper.authenticationHandler(ConnectionHelper.java:284)
+	at org.mariadb.jdbc.client.impl.StandardClient.<init>(StandardClient.java:185)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:70)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:101)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:27)
+	at net.sf.log4jdbc.sql.jdbcapi.DriverSpy.connect(DriverSpy.java:401)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	... 96 common frames omitted
+INFO  2024-04-19 15:46:22.101 [restartedMain] [AutocallApplication:55] - Starting AutocallApplication using Java 1.8.0_361 on DESKTOP-5BDQ2AQ with PID 18680 (C:\Users\82106\IdeaProjects\실무\autocall2\autocall\build\classes\java\main started by 이상민 in C:\Users\82106\IdeaProjects\실무\autocall2\autocall)
+DEBUG 2024-04-19 15:46:22.102 [restartedMain] [AutocallApplication:56] - Running with Spring Boot v2.7.14, Spring v5.3.29
+INFO  2024-04-19 15:46:22.103 [restartedMain] [AutocallApplication:631] - No active profile set, falling back to 1 default profile: "default"
+INFO  2024-04-19 15:46:22.346 [restartedMain] [DevToolsPropertyDefaultsPostProcessor:255] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+INFO  2024-04-19 15:46:22.346 [restartedMain] [DevToolsPropertyDefaultsPostProcessor:255] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+WARN  2024-04-19 15:46:22.714 [restartedMain] [ClassPathMapperScanner:44] - No MyBatis mapper was found in '[com.vdc.autocall]' package. Please check your configuration.
+INFO  2024-04-19 15:46:22.991 [restartedMain] [TomcatWebServer:108] - Tomcat initialized with port(s): 8078 (http)
+INFO  2024-04-19 15:46:22.996 [restartedMain] [Http11NioProtocol:173] - Initializing ProtocolHandler ["http-nio-8078"]
+INFO  2024-04-19 15:46:22.997 [restartedMain] [StandardService:173] - Starting service [Tomcat]
+INFO  2024-04-19 15:46:22.997 [restartedMain] [StandardEngine:173] - Starting Servlet engine: [Apache Tomcat/9.0.78]
+INFO  2024-04-19 15:46:23.042 [restartedMain] [[/autodial]:173] - Initializing Spring embedded WebApplicationContext
+INFO  2024-04-19 15:46:23.042 [restartedMain] [ServletWebServerApplicationContext:292] - Root WebApplicationContext: initialization completed in 695 ms
+INFO  2024-04-19 15:46:23.092 [restartedMain] [HikariDataSource:80] - HikariPool-1 - Starting...
+INFO  2024-04-19 15:46:23.196 [restartedMain] [HikariDataSource:82] - HikariPool-1 - Start completed.
+DEBUG 2024-04-19 15:46:23.202 [restartedMain] [DatabaseConfig$$EnhancerBySpringCGLIB$$1ed28635:42] - SqlSessionFactory Start
+WARN  2024-04-19 15:46:23.543 [restartedMain] [OptionalLiveReloadServer:62] - Unable to start LiveReload server
+INFO  2024-04-19 15:46:23.557 [restartedMain] [Http11NioProtocol:173] - Starting ProtocolHandler ["http-nio-8078"]
+INFO  2024-04-19 15:46:23.572 [restartedMain] [TomcatWebServer:220] - Tomcat started on port(s): 8078 (http) with context path '/autodial'
+INFO  2024-04-19 15:46:23.584 [restartedMain] [AutocallApplication:61] - Started AutocallApplication in 1.881 seconds (JVM running for 2.485)
+INFO  2024-04-19 15:46:47.379 [http-nio-8078-exec-4] [[/autodial]:173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+INFO  2024-04-19 15:46:47.379 [http-nio-8078-exec-4] [DispatcherServlet:525] - Initializing Servlet 'dispatcherServlet'
+INFO  2024-04-19 15:46:47.380 [http-nio-8078-exec-4] [DispatcherServlet:547] - Completed initialization in 0 ms
+DEBUG 2024-04-19 15:46:47.408 [http-nio-8078-exec-2] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2024-04-19 15:46:47.408 [http-nio-8078-exec-2] [LoggerInterceptor:21] - Request URI ===> /autodial/login
+DEBUG 2024-04-19 15:46:47.414 [http-nio-8078-exec-2] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2024-04-19 15:46:54.875 [http-nio-8078-exec-7] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2024-04-19 15:46:54.875 [http-nio-8078-exec-7] [LoggerInterceptor:21] - Request URI ===> /autodial/login/proc
+DEBUG 2024-04-19 15:46:54.927 [http-nio-8078-exec-7] [ArgumentResolver:54] - ##### XSSParam key : user_id, value : 1000
+DEBUG 2024-04-19 15:46:54.928 [http-nio-8078-exec-7] [ArgumentResolver:54] - ##### XSSParam key : user_pwd, value : 1111
+DEBUG 2024-04-19 15:46:54.933 [http-nio-8078-exec-7] [AbstractDAO:15] - 	 QueryId  	:  Account.account_login
+DEBUG 2024-04-19 15:46:54.954 [http-nio-8078-exec-7] [sqlonly:223] -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select seq, user_id, user_pwd
+        from account
+        where user_id = '1000'
+        and user_pwd =SHA2('1111', 256)
+        and del_yn = 0
+
+INFO  2024-04-19 15:46:54.978 [http-nio-8078-exec-7] [WebSessionListener:76] - currentSessionUserList -> user_id : 1000 
+DEBUG 2024-04-19 15:46:55.005 [http-nio-8078-exec-7] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2024-04-19 15:46:55.013 [http-nio-8078-exec-8] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2024-04-19 15:46:55.013 [http-nio-8078-exec-8] [LoggerInterceptor:21] - Request URI ===> /autodial/main
+DEBUG 2024-04-19 15:46:55.014 [http-nio-8078-exec-8] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2024-04-19 15:46:55.445 [http-nio-8078-exec-7] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2024-04-19 15:46:55.446 [http-nio-8078-exec-7] [LoggerInterceptor:21] - Request URI ===> /autodial/img/vodacom.png
+DEBUG 2024-04-19 15:46:55.446 [http-nio-8078-exec-8] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2024-04-19 15:46:55.446 [http-nio-8078-exec-8] [LoggerInterceptor:21] - Request URI ===> /autodial/img/logo.png
+DEBUG 2024-04-19 15:46:55.450 [http-nio-8078-exec-7] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2024-04-19 15:46:55.450 [http-nio-8078-exec-8] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2024-04-19 15:46:55.501 [http-nio-8078-exec-2] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2024-04-19 15:46:55.501 [http-nio-8078-exec-3] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2024-04-19 15:46:55.501 [http-nio-8078-exec-2] [LoggerInterceptor:21] - Request URI ===> /autodial/webfonts/nextgen-icons.woff2
+DEBUG 2024-04-19 15:46:55.501 [http-nio-8078-exec-3] [LoggerInterceptor:21] - Request URI ===> /autodial/webfonts/fa-light-300.woff2
+DEBUG 2024-04-19 15:46:55.503 [http-nio-8078-exec-2] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2024-04-19 15:46:55.504 [http-nio-8078-exec-3] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2024-04-19 15:46:55.594 [http-nio-8078-exec-7] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2024-04-19 15:46:55.594 [http-nio-8078-exec-7] [LoggerInterceptor:21] - Request URI ===> /autodial/list
+DEBUG 2024-04-19 15:46:55.599 [http-nio-8078-exec-7] [AbstractDAO:15] - 	 QueryId  	:  Device.DeviceList
+DEBUG 2024-04-19 15:46:55.602 [http-nio-8078-exec-7] [sqlonly:223] -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT seq, lte_phone, cid_number,
+               DATE_FORMAT(reg_dt, '%Y/%m/%d %k:%i') AS reg_dt,
+               DATE_FORMAT(last_edt_dt, '%Y/%m/%d %k:%i') AS last_edt_dt
+        FROM device
+        WHERE del_stat = 0
+
+DEBUG 2024-04-19 15:46:55.605 [http-nio-8078-exec-7] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2024-04-19 15:47:05.188 [http-nio-8078-exec-8] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2024-04-19 15:47:05.189 [http-nio-8078-exec-8] [LoggerInterceptor:21] - Request URI ===> /autodial/edit
+DEBUG 2024-04-19 15:47:05.189 [http-nio-8078-exec-8] [ArgumentResolver:54] - ##### XSSParam key : seq, value : 5
+DEBUG 2024-04-19 15:47:05.190 [http-nio-8078-exec-8] [ArgumentResolver:54] - ##### XSSParam key : lte_phone, value : 1234
+DEBUG 2024-04-19 15:47:05.190 [http-nio-8078-exec-8] [ArgumentResolver:54] - ##### XSSParam key : cid_number, value : 12345
+DEBUG 2024-04-19 15:47:05.190 [http-nio-8078-exec-8] [AbstractDAO:15] - 	 QueryId  	:  Device.DeviceEdit
+DEBUG 2024-04-19 15:47:05.192 [http-nio-8078-exec-8] [sqlonly:223] -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. UPDATE device
+        SET lte_phone = '1234',
+            cid_number = '12345',
+            last_edt_dt = NOW()
+        WHERE seq = '5'
+
+DEBUG 2024-04-19 15:47:05.195 [http-nio-8078-exec-8] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2024-04-19 15:47:06.085 [http-nio-8078-exec-5] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2024-04-19 15:47:06.085 [http-nio-8078-exec-5] [LoggerInterceptor:21] - Request URI ===> /autodial/list
+DEBUG 2024-04-19 15:47:06.086 [http-nio-8078-exec-5] [AbstractDAO:15] - 	 QueryId  	:  Device.DeviceList
+DEBUG 2024-04-19 15:47:06.088 [http-nio-8078-exec-5] [sqlonly:223] -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT seq, lte_phone, cid_number,
+               DATE_FORMAT(reg_dt, '%Y/%m/%d %k:%i') AS reg_dt,
+               DATE_FORMAT(last_edt_dt, '%Y/%m/%d %k:%i') AS last_edt_dt
+        FROM device
+        WHERE del_stat = 0
+
+DEBUG 2024-04-19 15:47:06.091 [http-nio-8078-exec-5] [LoggerInterceptor:31] - ==================== END ======================
+INFO  2024-04-19 15:52:17.082 [SpringApplicationShutdownHook] [HikariDataSource:350] - HikariPool-1 - Shutdown initiated...
+INFO  2024-04-19 15:52:17.106 [SpringApplicationShutdownHook] [HikariDataSource:352] - HikariPool-1 - Shutdown completed.

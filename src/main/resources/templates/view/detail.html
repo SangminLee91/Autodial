@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout}">
+
+<head>
+    <meta charset="utf-8">
+    <title>AUTODIAL</title>
+    <meta name="description" content="Page Title">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, minimal-ui">
+
+    <!-- base css -->
+    <link id="vendorsbundle" rel="stylesheet" media="screen, print" href="css/vendors.bundle.css">
+    <link id="appbundle" rel="stylesheet" media="screen, print" href="css/app.bundle.css">
+    <link id="mytheme" rel="stylesheet" media="screen, print" href="css/themes/cust-theme-15.css">
+    <link id="myskin" rel="stylesheet" media="screen, print" href="css/skins/skin-master.css">
+    <link rel="stylesheet" media="screen, print" href="css/datatables/datatables.bundle.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+</head>
+<!-- BEGIN Body -->
+
+<body class="mod-bg-1 mod-nav-link nav-function-top desktop chrome webkit pace-done mod-skin-light blur">
+<div layout:fragment="content" class="_content">
+    <!-- BEGIN Page Wrapper -->
+    <div class="page-wrapper">
+        <div class="page-inner">
+
+            <!-- BEGIN Left Aside -->
+            <aside class="page-sidebar">
+
+                <!-- BEGIN PRIMARY NAVIGATION -->
+                <nav id="js-primary-nav" class="primary-nav" role="navigation">
+                    <ul id="js-nav-menu" class="nav-menu">
+                        <li>
+                            <a href="/autodial/main" title="메뉴1" >
+                                <i class="fas fa-mobile-alt"></i>
+                                <span class="nav-link-text" >기기현황</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/autodial/monitor" title="메뉴2">
+                                <i class="fal fa-chart-line"></i>
+                                <span class="nav-link-text">모니터링</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/autodial/stats" title="메뉴3">
+                                <i class="fal fa-chart-bar"></i>
+                                <span class="nav-link-text">통계</span>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="/autodial/detail" title="상세이력">
+                                <i class="fal fa-history"></i>
+                                <span class="nav-link-text">상세이력</span>
+                            </a>
+                        </li>
+                        <button id="logout" class="btn btn-link ml-auto">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </button>
+                    </ul>
+                </nav>
+                <!-- END PRIMARY NAVIGATION -->
+
+            </aside>
+            <!-- END Left Aside -->
+
+
+            <div class="page-content-wrapper">
+                <!-- BEGIN Page Header -->
+                <header class="page-header" role="banner">
+
+
+                    <div class="page-logo">
+                        <a href="#" class="d-flex align-items-center position-relative">
+                            <img src="img/logo.png" alt="SmartAdmin WebApp" aria-roledescription="logo">
+                            <span class="page-logo-text mr-1">AUTODIAL</span>
+
+
+                        </a>
+
+                        <button id="signup" class="btn btn-link ml-auto">
+                            <i class="fas fa-user-plus"></i> 사용자 설정
+                        </button>
+                    </div>
+
+                    <div class="hidden-lg-up">
+                        <a href="#" class="header-btn btn press-scale-down" data-action="toggle" data-class="mobile-nav-on">
+                            <i class="ni ni-menu"></i>
+                        </a>
+                    </div>
+
+
+                </header>
+                <main id="js-page-content" role="main" class="page-content">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div id="panel-1" class="panel">
+                                <div class="panel-hdr">
+                                    <h2>상세이력</h2>
+
+                                    <div class="panel-toolbar">
+                                        <form style="display: inline-block;">
+
+                                            시작일: <input type="text" id="start_dt" th:value="${start_dt}" readonly/>
+                                            <span class="datepicker-icon" onclick="openDatePicker('start_dt')">📅</span>
+                                            &nbsp;
+                                            종료일: <input type="text" id="end_dt" th:value="${end_dt}" readonly/>
+                                            <span class="datepicker-icon" onclick="openDatePicker('end_dt')">📅</span>
+                                            &nbsp;
+                                            <button type="button" id="searchBtn">
+                                                <i class="fas fa-search"></i> 조회
+                                            </button>
+                                            &nbsp; &nbsp; &nbsp;
+                                            <button type="button" id="exportExcel">
+                                                <i class="fas fa-download"></i> 엑셀 출력
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <div class="panel-container show">
+                                    <div class="panel-content">
+                                        <table id="DeviceList" class="table-sm table-bordered table-hover table-striped w-100" style="width:100%">
+                                            <thead class="thead-themed">
+                                            <tr>
+                                                <th>기기번호</th>
+                                                <th>발신번호</th>
+                                                <th>시작시간</th>
+                                                <th>종료시간</th>
+                                                <th>총 사용시간</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+
+                <div class="page-content-overlay" data-action="toggle" data-class="mobile-nav-on"></div> <!-- END Page Content -->
+
+            </div>
+        </div>
+    </div>
+    <!-- END Page Wrapper -->
+
+    <!-- 사용자 추가 -->
+    <div class="modal fade" id="addUserModal" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        사용자 추가
+                    </h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fal fa-times"></i></span>
+                    </button>
+                </div>
+
+                <form name="addUserForm" id="addUserForm" method="post">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="input-group input-group-sm">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text width-76px">사용자 ID</span>
+                                </div>
+                                <input type="text" id="user_id" placeholder="사용자 ID" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group input-group-sm">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text width-76px">비밀번호</span>
+                                </div>
+                                <input type="password" id="user_pwd" placeholder="비밀번호" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-xs btn-dark" id="addUserBtn">추가</button>
+                            <button type="button" class="btn btn-xs btn-dark" data-dismiss="modal">닫기</button>
+                        </div>
+
+                        <!-- 사용자 리스트와 삭제 버튼 -->
+                        <div class="panel-container show">
+                            <div class="panel-content">
+                                <table id="AccountList" class="table-sm table-bordered table-hover table-striped w-100" style="width:100%">
+                                    <thead class="thead-themed">
+                                    <tr>
+                                        <th>아이디</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <button type="button" class="btn btn-sm btn-danger" id="deleteUserBtn">선택된 사용자 삭제</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- 사용자 추가 끝 -->
+
+
+</div>
+
+<th:block layout:fragment="script">
+    <script src="js/vendors.bundle.js"></script>
+    <script src="js/app.bundle.js"></script>
+    <script src="js/datatables/datatables.bundle.js"></script>
+    <script src="js/datatables/datatables.default.setting.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+
+    <script type="text/javascript">
+
+        function openDatePicker(inputId) {
+            $("#" + inputId).datepicker({
+                dateFormat: 'yy-mm-dd',
+                onSelect: function(dateText) {
+                    $("#" + inputId).val(dateText);
+                }
+            }).datepicker("show");
+        }
+
+
+        let selectedDeviceRow = "";
+        let selectedUserRow = "";
+
+        $(document).ready(function() {
+            $("#logout").css("cursor", "pointer").click(function () {
+                location.replace(CONTEXT_PATH + "/logout");
+            });
+
+            let usertable;
+            let devicetable;
+
+            devicetable = $('#DeviceList').DataTable({
+                ajax: {
+                    url: CONTEXT_PATH + "/detaillist",
+                    dataSrc: "data"
+                },
+                columns: [
+                    { "data": "device_no" },
+                    {"data": "calling_no"},
+                    {"data": "start_dt"},
+                    {"data": "end_dt"},
+                    {"data": "calling_time"}
+                ],
+                bLengthChange: false,
+                scrollCollapse: true,
+                ordering: true,
+                select: true,
+                paging: true,             // 페이징처리
+                pageLength: 13           // 페이지 별 열 갯수
+            });
+
+            devicetable.on('select', function (e, dt, type, indexes) {
+                selectedDeviceRow = devicetable.row(indexes).data();
+                console.log("selectedRow", selectedDeviceRow);
+            }).on('deselect', function () {
+                selectedDeviceRow = "";
+            });
+
+            // 날짜 조회 버튼
+            $('#searchBtn').click(function () {
+                let start_dt = $('#start_dt').val();
+                let end_dt = $('#end_dt').val();
+
+                $.ajax({
+                    url: CONTEXT_PATH + "/detaillist",
+                    type: "GET",
+                    data: {
+                        start_dt: start_dt,
+                        end_dt: end_dt
+                    },
+                    success: function (response) {
+                        devicetable.clear().rows.add(response.data).draw();
+                    },
+                    error: function () {
+                        console.error("통계 데이터를 불러오는 중 에러가 발생했습니다.");
+                    }
+                });
+            });
+
+            // 엑셀 출력 버튼
+            $("#exportExcel").click(function(){
+                let start_dt = $("#start_dt").val();
+                let end_dt = $("#end_dt").val();
+
+                location.href = CONTEXT_PATH+"/detaillist/exceldown?start_dt="+encodeURI(start_dt)+"&end_dt="+encodeURI(end_dt);
+
+            });
+
+
+            // 사용자 리스트
+            usertable = $('#AccountList').DataTable({
+                ajax: {
+                    url: CONTEXT_PATH + "/account/list",
+                    dataSrc: "data"
+                },
+                columns: [
+                    // { "data": "seq" },
+                    {"data": "user_id"}
+                ],
+                bLengthChange: false,
+                scrollCollapse: true,
+                ordering: false,
+                select: true,
+                paging: true,             // 페이징처리
+                pageLength: 5            // 페이지 별 열 갯수
+            });
+
+            usertable.on('select', function (e, dt, type, indexes) {
+                selectedUserRow = usertable.row(indexes).data();
+                console.log("selectedRow", selectedUserRow);
+            }).on('deselect', function () {
+                selectedUserRow = "";
+            });
+
+            // 사용자 설정 모달
+            $('#signup').click(function () {
+                $('#addUserModal').modal('show');
+            });
+
+
+            // 추가 버튼
+            $('#addUserBtn').click(function () {
+                let userId = $('#user_id').val();
+                let userPwd = $('#user_pwd').val();
+
+                $.ajax({
+                    url: CONTEXT_PATH + '/account/add',
+                    type: 'POST',
+                    data: {
+                        user_id: userId,
+                        user_pwd: userPwd
+                    },
+                    success: function () {
+                        $('#addUserModal').modal('hide');
+                        alert("사용자가 추가되었습니다.");
+                        // Handle any additional logic after successful user addition
+                    },
+                    error: function () {
+                        console.error('사용자 추가 중 에러가 발생했습니다.');
+                    }
+                });
+            });
+
+            $('#deleteUserBtn').click(function () {
+                if (selectedUserRow === "") {
+                    alert("사용자를 선택 해 주세요.");
+                    return;
+                }
+
+                if (confirm("정말로 삭제하시겠습니까?")) {
+                    $.ajax({
+                        url: CONTEXT_PATH + '/account/del',
+                        type: 'POST',
+                        data: {
+                            seq: selectedUserRow.seq
+                        },
+                        success: function () {
+                            alert("삭제가 완료되었습니다.")
+                            $('#AccountList').DataTable().ajax.reload();
+                        },
+                        error: function () {
+                            console.error('사용자 삭제 도중 오류가 발생헀습니다.');
+                        }
+                    });
+                }
+            });
+
+            $("#start_dt").val(getToday()); //오늘날짜 기본
+            $("#end_dt").val(getToday()); //오늘날짜 기본
+        });
+    </script>
+</th:block>
+</body>
+<!-- END Body -->
+</html>

@@ -1,0 +1,157 @@
+INFO  2023-12-07 13:07:52.323 [restartedMain] [AutocallApplication:55] - Starting AutocallApplication using Java 1.8.0_361 on DESKTOP-5BDQ2AQ with PID 1700 (C:\Users\82106\IdeaProjects\실무\autocall\build\classes\java\main started by 이상민 in C:\Users\82106\IdeaProjects\실무\autocall)
+DEBUG 2023-12-07 13:07:52.331 [restartedMain] [AutocallApplication:56] - Running with Spring Boot v2.7.14, Spring v5.3.29
+INFO  2023-12-07 13:07:52.331 [restartedMain] [AutocallApplication:631] - No active profile set, falling back to 1 default profile: "default"
+INFO  2023-12-07 13:07:52.480 [restartedMain] [DevToolsPropertyDefaultsPostProcessor:255] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+INFO  2023-12-07 13:07:52.481 [restartedMain] [DevToolsPropertyDefaultsPostProcessor:255] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+WARN  2023-12-07 13:07:52.941 [restartedMain] [ClassPathMapperScanner:44] - No MyBatis mapper was found in '[com.vdc.autocall]' package. Please check your configuration.
+INFO  2023-12-07 13:07:53.239 [restartedMain] [TomcatWebServer:108] - Tomcat initialized with port(s): 8080 (http)
+INFO  2023-12-07 13:07:53.245 [restartedMain] [Http11NioProtocol:173] - Initializing ProtocolHandler ["http-nio-8080"]
+INFO  2023-12-07 13:07:53.246 [restartedMain] [StandardService:173] - Starting service [Tomcat]
+INFO  2023-12-07 13:07:53.246 [restartedMain] [StandardEngine:173] - Starting Servlet engine: [Apache Tomcat/9.0.78]
+INFO  2023-12-07 13:07:53.297 [restartedMain] [[/autodial]:173] - Initializing Spring embedded WebApplicationContext
+INFO  2023-12-07 13:07:53.297 [restartedMain] [ServletWebServerApplicationContext:292] - Root WebApplicationContext: initialization completed in 816 ms
+INFO  2023-12-07 13:07:53.353 [restartedMain] [HikariDataSource:80] - HikariPool-1 - Starting...
+INFO  2023-12-07 13:07:53.451 [restartedMain] [HikariDataSource:82] - HikariPool-1 - Start completed.
+DEBUG 2023-12-07 13:07:53.458 [restartedMain] [DatabaseConfig$$EnhancerBySpringCGLIB$$4d04e738:42] - SqlSessionFactory Start
+INFO  2023-12-07 13:07:53.842 [restartedMain] [OptionalLiveReloadServer:59] - LiveReload server is running on port 35729
+INFO  2023-12-07 13:07:53.853 [restartedMain] [Http11NioProtocol:173] - Starting ProtocolHandler ["http-nio-8080"]
+INFO  2023-12-07 13:07:53.864 [restartedMain] [TomcatWebServer:220] - Tomcat started on port(s): 8080 (http) with context path '/autodial'
+INFO  2023-12-07 13:07:53.871 [restartedMain] [AutocallApplication:61] - Started AutocallApplication in 1.88 seconds (JVM running for 2.438)
+INFO  2023-12-07 13:08:53.366 [Catalina-utility-1] [WebSessionListener:128] - updateUserCloseTime 1000 
+INFO  2023-12-07 13:09:47.626 [http-nio-8080-exec-6] [[/autodial]:173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+INFO  2023-12-07 13:09:47.627 [http-nio-8080-exec-6] [DispatcherServlet:525] - Initializing Servlet 'dispatcherServlet'
+INFO  2023-12-07 13:09:47.628 [http-nio-8080-exec-6] [DispatcherServlet:547] - Completed initialization in 1 ms
+DEBUG 2023-12-07 13:09:47.639 [http-nio-8080-exec-6] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2023-12-07 13:09:47.639 [http-nio-8080-exec-6] [LoggerInterceptor:21] - Request URI ===> /autodial/login
+DEBUG 2023-12-07 13:09:47.644 [http-nio-8080-exec-6] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2023-12-07 13:09:57.222 [http-nio-8080-exec-9] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2023-12-07 13:09:57.222 [http-nio-8080-exec-9] [LoggerInterceptor:21] - Request URI ===> /autodial/login/proc
+DEBUG 2023-12-07 13:09:57.278 [http-nio-8080-exec-9] [ArgumentResolver:54] - ##### XSSParam key : user_id, value : manager
+DEBUG 2023-12-07 13:09:57.278 [http-nio-8080-exec-9] [ArgumentResolver:54] - ##### XSSParam key : user_pwd, value : vdc7200#
+DEBUG 2023-12-07 13:09:57.283 [http-nio-8080-exec-9] [AbstractDAO:15] - 	 QueryId  	:  Account.account_login
+DEBUG 2023-12-07 13:09:57.301 [http-nio-8080-exec-9] [sqlonly:223] -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select seq, user_id, user_pwd
+        from account
+        where user_id = 'manager'
+        and user_pwd =SHA2('vdc7200#', 256)
+        and del_yn = 0
+
+DEBUG 2023-12-07 13:09:57.337 [http-nio-8080-exec-9] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2023-12-07 13:10:01.416 [http-nio-8080-exec-10] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2023-12-07 13:10:01.417 [http-nio-8080-exec-10] [LoggerInterceptor:21] - Request URI ===> /autodial/login/proc
+DEBUG 2023-12-07 13:10:01.417 [http-nio-8080-exec-10] [ArgumentResolver:54] - ##### XSSParam key : user_id, value : 1000
+DEBUG 2023-12-07 13:10:01.417 [http-nio-8080-exec-10] [ArgumentResolver:54] - ##### XSSParam key : user_pwd, value : 1111
+DEBUG 2023-12-07 13:10:01.418 [http-nio-8080-exec-10] [AbstractDAO:15] - 	 QueryId  	:  Account.account_login
+DEBUG 2023-12-07 13:10:01.420 [http-nio-8080-exec-10] [sqlonly:223] -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select seq, user_id, user_pwd
+        from account
+        where user_id = '1000'
+        and user_pwd =SHA2('1111', 256)
+        and del_yn = 0
+
+INFO  2023-12-07 13:10:01.433 [http-nio-8080-exec-10] [WebSessionListener:76] - currentSessionUserList -> user_id : 1000 
+DEBUG 2023-12-07 13:10:01.435 [http-nio-8080-exec-10] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2023-12-07 13:10:01.441 [http-nio-8080-exec-1] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2023-12-07 13:10:01.442 [http-nio-8080-exec-1] [LoggerInterceptor:21] - Request URI ===> /autodial/main
+DEBUG 2023-12-07 13:10:01.442 [http-nio-8080-exec-1] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2023-12-07 13:10:01.760 [http-nio-8080-exec-10] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2023-12-07 13:10:01.760 [http-nio-8080-exec-1] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2023-12-07 13:10:01.760 [http-nio-8080-exec-10] [LoggerInterceptor:21] - Request URI ===> /autodial/img/vodacom.png
+DEBUG 2023-12-07 13:10:01.760 [http-nio-8080-exec-1] [LoggerInterceptor:21] - Request URI ===> /autodial/img/logo.png
+DEBUG 2023-12-07 13:10:01.762 [http-nio-8080-exec-1] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2023-12-07 13:10:01.764 [http-nio-8080-exec-10] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2023-12-07 13:10:02.095 [http-nio-8080-exec-8] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2023-12-07 13:10:02.095 [http-nio-8080-exec-4] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2023-12-07 13:10:02.095 [http-nio-8080-exec-8] [LoggerInterceptor:21] - Request URI ===> /autodial/webfonts/fa-light-300.woff2
+DEBUG 2023-12-07 13:10:02.095 [http-nio-8080-exec-4] [LoggerInterceptor:21] - Request URI ===> /autodial/webfonts/nextgen-icons.woff2
+DEBUG 2023-12-07 13:10:02.097 [http-nio-8080-exec-4] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2023-12-07 13:10:02.097 [http-nio-8080-exec-8] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2023-12-07 13:10:02.141 [http-nio-8080-exec-9] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2023-12-07 13:10:02.141 [http-nio-8080-exec-9] [LoggerInterceptor:21] - Request URI ===> /autodial/list
+DEBUG 2023-12-07 13:10:02.144 [http-nio-8080-exec-9] [AbstractDAO:15] - 	 QueryId  	:  Device.DeviceList
+DEBUG 2023-12-07 13:10:02.163 [http-nio-8080-exec-9] [sqlonly:223] -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT seq, lte_phone, cid_number,
+               DATE_FORMAT(reg_dt, '%Y/%m/%d %k:%i') AS reg_dt,
+               DATE_FORMAT(last_edt_dt, '%Y/%m/%d %k:%i') AS last_edt_dt
+        FROM device
+        WHERE del_stat = 0
+
+DEBUG 2023-12-07 13:10:02.171 [http-nio-8080-exec-9] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2023-12-07 13:10:11.027 [http-nio-8080-exec-1] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2023-12-07 13:10:11.027 [http-nio-8080-exec-1] [LoggerInterceptor:21] - Request URI ===> /autodial/edit
+DEBUG 2023-12-07 13:10:11.028 [http-nio-8080-exec-1] [ArgumentResolver:54] - ##### XSSParam key : seq, value : 2
+DEBUG 2023-12-07 13:10:11.028 [http-nio-8080-exec-1] [ArgumentResolver:54] - ##### XSSParam key : lte_phone, value : 01056781234
+DEBUG 2023-12-07 13:10:11.028 [http-nio-8080-exec-1] [ArgumentResolver:54] - ##### XSSParam key : cid_number, value : 08012366661
+DEBUG 2023-12-07 13:10:11.028 [http-nio-8080-exec-1] [AbstractDAO:15] - 	 QueryId  	:  Device.DeviceEdit
+DEBUG 2023-12-07 13:10:11.030 [http-nio-8080-exec-1] [sqlonly:223] -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. UPDATE device
+        SET lte_phone = '01056781234',
+            cid_number = '08012366661',
+            last_edt_dt = NOW()
+        WHERE seq = '2'
+
+DEBUG 2023-12-07 13:10:11.040 [http-nio-8080-exec-1] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2023-12-07 13:10:11.956 [http-nio-8080-exec-2] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2023-12-07 13:10:11.956 [http-nio-8080-exec-2] [LoggerInterceptor:21] - Request URI ===> /autodial/list
+DEBUG 2023-12-07 13:10:11.957 [http-nio-8080-exec-2] [AbstractDAO:15] - 	 QueryId  	:  Device.DeviceList
+DEBUG 2023-12-07 13:10:11.960 [http-nio-8080-exec-2] [sqlonly:223] -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT seq, lte_phone, cid_number,
+               DATE_FORMAT(reg_dt, '%Y/%m/%d %k:%i') AS reg_dt,
+               DATE_FORMAT(last_edt_dt, '%Y/%m/%d %k:%i') AS last_edt_dt
+        FROM device
+        WHERE del_stat = 0
+
+DEBUG 2023-12-07 13:10:11.964 [http-nio-8080-exec-2] [LoggerInterceptor:31] - ==================== END ======================
+INFO  2023-12-07 13:14:30.595 [File Watcher] [LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener:211] - Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+INFO  2023-12-07 13:14:30.682 [Thread-9] [Http11NioProtocol:173] - Pausing ProtocolHandler ["http-nio-8080"]
+INFO  2023-12-07 13:14:30.683 [Thread-9] [StandardService:173] - Stopping service [Tomcat]
+INFO  2023-12-07 13:14:30.683 [Thread-9] [[/autodial]:173] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+INFO  2023-12-07 13:14:30.687 [Thread-9] [Http11NioProtocol:173] - Stopping ProtocolHandler ["http-nio-8080"]
+INFO  2023-12-07 13:14:30.687 [Thread-9] [Http11NioProtocol:173] - Destroying ProtocolHandler ["http-nio-8080"]
+INFO  2023-12-07 13:14:30.688 [Thread-9] [HikariDataSource:350] - HikariPool-1 - Shutdown initiated...
+INFO  2023-12-07 13:14:30.710 [Thread-9] [HikariDataSource:352] - HikariPool-1 - Shutdown completed.
+INFO  2023-12-07 13:14:30.807 [restartedMain] [AutocallApplication:55] - Starting AutocallApplication using Java 1.8.0_361 on DESKTOP-5BDQ2AQ with PID 1700 (C:\Users\82106\IdeaProjects\실무\autocall\build\classes\java\main started by 이상민 in C:\Users\82106\IdeaProjects\실무\autocall)
+DEBUG 2023-12-07 13:14:30.808 [restartedMain] [AutocallApplication:56] - Running with Spring Boot v2.7.14, Spring v5.3.29
+INFO  2023-12-07 13:14:30.808 [restartedMain] [AutocallApplication:631] - No active profile set, falling back to 1 default profile: "default"
+WARN  2023-12-07 13:14:30.914 [restartedMain] [ClassPathMapperScanner:44] - No MyBatis mapper was found in '[com.vdc.autocall]' package. Please check your configuration.
+INFO  2023-12-07 13:14:30.937 [restartedMain] [TomcatWebServer:108] - Tomcat initialized with port(s): 8080 (http)
+INFO  2023-12-07 13:14:30.938 [restartedMain] [Http11NioProtocol:173] - Initializing ProtocolHandler ["http-nio-8080"]
+INFO  2023-12-07 13:14:30.938 [restartedMain] [StandardService:173] - Starting service [Tomcat]
+INFO  2023-12-07 13:14:30.938 [restartedMain] [StandardEngine:173] - Starting Servlet engine: [Apache Tomcat/9.0.78]
+INFO  2023-12-07 13:14:30.945 [restartedMain] [[/autodial]:173] - Initializing Spring embedded WebApplicationContext
+INFO  2023-12-07 13:14:30.945 [restartedMain] [ServletWebServerApplicationContext:292] - Root WebApplicationContext: initialization completed in 136 ms
+INFO  2023-12-07 13:14:30.957 [restartedMain] [HikariDataSource:80] - HikariPool-2 - Starting...
+INFO  2023-12-07 13:14:30.964 [restartedMain] [HikariDataSource:82] - HikariPool-2 - Start completed.
+DEBUG 2023-12-07 13:14:30.966 [restartedMain] [DatabaseConfig$$EnhancerBySpringCGLIB$$4d04e738:42] - SqlSessionFactory Start
+INFO  2023-12-07 13:14:31.039 [restartedMain] [OptionalLiveReloadServer:59] - LiveReload server is running on port 35729
+INFO  2023-12-07 13:14:31.045 [restartedMain] [Http11NioProtocol:173] - Starting ProtocolHandler ["http-nio-8080"]
+INFO  2023-12-07 13:14:31.046 [restartedMain] [TomcatWebServer:220] - Tomcat started on port(s): 8080 (http) with context path '/autodial'
+INFO  2023-12-07 13:14:31.049 [restartedMain] [AutocallApplication:61] - Started AutocallApplication in 0.267 seconds (JVM running for 399.616)
+INFO  2023-12-07 13:14:31.050 [restartedMain] [ConditionEvaluationDeltaLoggingListener:63] - Condition evaluation unchanged
+INFO  2023-12-07 13:15:11.337 [File Watcher] [LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener:211] - Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+INFO  2023-12-07 13:15:11.442 [Thread-15] [Http11NioProtocol:173] - Pausing ProtocolHandler ["http-nio-8080"]
+INFO  2023-12-07 13:15:11.443 [Thread-15] [StandardService:173] - Stopping service [Tomcat]
+INFO  2023-12-07 13:15:11.445 [Thread-15] [Http11NioProtocol:173] - Stopping ProtocolHandler ["http-nio-8080"]
+INFO  2023-12-07 13:15:11.447 [Thread-15] [Http11NioProtocol:173] - Destroying ProtocolHandler ["http-nio-8080"]
+INFO  2023-12-07 13:15:11.448 [Thread-15] [HikariDataSource:350] - HikariPool-2 - Shutdown initiated...
+INFO  2023-12-07 13:15:11.462 [Thread-15] [HikariDataSource:352] - HikariPool-2 - Shutdown completed.
+INFO  2023-12-07 13:15:11.581 [restartedMain] [AutocallApplication:55] - Starting AutocallApplication using Java 1.8.0_361 on DESKTOP-5BDQ2AQ with PID 1700 (C:\Users\82106\IdeaProjects\실무\autocall\build\classes\java\main started by 이상민 in C:\Users\82106\IdeaProjects\실무\autocall)
+DEBUG 2023-12-07 13:15:11.581 [restartedMain] [AutocallApplication:56] - Running with Spring Boot v2.7.14, Spring v5.3.29
+INFO  2023-12-07 13:15:11.581 [restartedMain] [AutocallApplication:631] - No active profile set, falling back to 1 default profile: "default"
+WARN  2023-12-07 13:15:11.681 [restartedMain] [ClassPathMapperScanner:44] - No MyBatis mapper was found in '[com.vdc.autocall]' package. Please check your configuration.
+INFO  2023-12-07 13:15:11.703 [restartedMain] [TomcatWebServer:108] - Tomcat initialized with port(s): 8080 (http)
+INFO  2023-12-07 13:15:11.703 [restartedMain] [Http11NioProtocol:173] - Initializing ProtocolHandler ["http-nio-8080"]
+INFO  2023-12-07 13:15:11.703 [restartedMain] [StandardService:173] - Starting service [Tomcat]
+INFO  2023-12-07 13:15:11.703 [restartedMain] [StandardEngine:173] - Starting Servlet engine: [Apache Tomcat/9.0.78]
+INFO  2023-12-07 13:15:11.711 [restartedMain] [[/autodial]:173] - Initializing Spring embedded WebApplicationContext
+INFO  2023-12-07 13:15:11.711 [restartedMain] [ServletWebServerApplicationContext:292] - Root WebApplicationContext: initialization completed in 129 ms
+INFO  2023-12-07 13:15:11.722 [restartedMain] [HikariDataSource:80] - HikariPool-3 - Starting...
+INFO  2023-12-07 13:15:11.731 [restartedMain] [HikariDataSource:82] - HikariPool-3 - Start completed.
+DEBUG 2023-12-07 13:15:11.733 [restartedMain] [DatabaseConfig$$EnhancerBySpringCGLIB$$4d04e738:42] - SqlSessionFactory Start
+INFO  2023-12-07 13:15:11.799 [restartedMain] [OptionalLiveReloadServer:59] - LiveReload server is running on port 35729
+INFO  2023-12-07 13:15:11.804 [restartedMain] [Http11NioProtocol:173] - Starting ProtocolHandler ["http-nio-8080"]
+INFO  2023-12-07 13:15:11.805 [restartedMain] [TomcatWebServer:220] - Tomcat started on port(s): 8080 (http) with context path '/autodial'
+INFO  2023-12-07 13:15:11.810 [restartedMain] [AutocallApplication:61] - Started AutocallApplication in 0.252 seconds (JVM running for 440.377)
+INFO  2023-12-07 13:15:11.811 [restartedMain] [ConditionEvaluationDeltaLoggingListener:63] - Condition evaluation unchanged
+INFO  2023-12-07 13:17:26.878 [SpringApplicationShutdownHook] [HikariDataSource:350] - HikariPool-3 - Shutdown initiated...
+INFO  2023-12-07 13:17:26.891 [SpringApplicationShutdownHook] [HikariDataSource:352] - HikariPool-3 - Shutdown completed.
