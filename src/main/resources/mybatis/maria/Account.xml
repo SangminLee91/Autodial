@@ -4,28 +4,19 @@
 <mapper namespace="Account">
 
     <select id="AccountList" parameterType="hashmap" resultType="hashmap">
-        SELECT seq, user_id
-        FROM account
-        WHERE del_yn = 0
+        call usp_account_list_s()
     </select>
     <insert id="AccountAdd" parameterType="hashmap">
-        insert into account (user_id, user_pwd)
-        SELECT #{user_id}, SHA2(#{user_pwd}, 256)
-        FROM DUAL
-        WHERE NOT EXISTS (SELECT 1 FROM account WHERE user_id = #{user_id})
+        call usp_account_i(#{user_id}, #{user_pwd})
     </insert>
+    <select id="isUserIdExists" parameterType="String" resultType="int">
+        call usp_account_isUserIdExists(#{user_id})
+    </select>
     <update id="AccountDel" parameterType="hashmap">
-        UPDATE account
-        SET del_yn = 1
-        WHERE seq = #{seq ,jdbcType=INTEGER}
+        call usp_account_d(#{seq})
     </update>
-
     <select id="account_login" parameterType="hashmap" resultType="hashmap">
-        select seq, user_id, user_pwd
-        from account
-        where user_id = #{user_id}
-        and user_pwd =SHA2(#{user_pwd}, 256)
-        and del_yn = 0
+        call usp_account_login(#{user_id}, #{user_pwd})
     </select>
 
 </mapper>

@@ -29,6 +29,14 @@
     const CONTEXT_PATH = document.getElementById("contextPathHolder").getAttribute("data-contextPath") ? document.getElementById("contextPathHolder").getAttribute("data-contextPath") : '';
 
     $(document).ready(function() {
+
+        // Enter 키로 로그인
+        $('#user_pwd').keypress(function(e){
+            if(e.keyCode === 13){
+                $('#btn_login').click();
+            }
+        });
+
         $('#btn_login').click(function(){
             let user_id = $("#user_id").val();
             let user_pwd = $("#user_pwd").val();

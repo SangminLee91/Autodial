@@ -82,7 +82,7 @@
 
                         </a>
 
-                        <button id="signup" class="btn btn-link ml-auto">
+                        <button id="signup" class="btn btn-link ml-auto" th:if="${#strings.equals(session.user_id, 'manager')}">
                             <i class="fas fa-user-plus"></i> 사용자 설정
                         </button>
                     </div>
@@ -351,10 +351,12 @@
                     success: function () {
                         $('#addUserModal').modal('hide');
                         alert("사용자가 추가되었습니다.");
-                        // Handle any additional logic after successful user addition
+                        // 사용자가 추가된 후 AccountList 테이블을 새로 고침
+                        $('#AccountList').DataTable().ajax.reload();
                     },
-                    error: function () {
-                        console.error('사용자 추가 중 에러가 발생했습니다.');
+                    error: function (xhr, status, errorThrown) {
+                        // 서버에서 전달한 에러 메시지를 가져와서 사용자에게 보여줌
+                        alert("사용자 추가 중 에러가 발생하였습니다." + errorThrown);
                     }
                 });
             });

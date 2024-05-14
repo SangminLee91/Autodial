@@ -33,9 +33,6 @@ public class DeviceDao extends AbstractDAO {
     public List<Map<String, Object>> DetailList(Map<String, Object> map) {
         return (List<Map<String, Object>>)selectList(sqlSession, "Device.DetailList", map);
     }
-//    public List<Map<String, Object>> MonitorList(Map<String, Object> map) {
-//        return (List<Map<String, Object>>)selectList(sqlSession, "Device.MonitorList", map);
-//    }
     public List<Map<String, Object>> getstats_excel(Map<String, Object> map) throws Exception{
         return selectList(sqlSession, "Device.StatsExcel", map);
     }

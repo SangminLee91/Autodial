@@ -28,16 +28,20 @@ public class DeviceController {
 
 
     @RequestMapping(value="/list")
-    public ModelAndView DeviceList(CommandMap commandMap) throws Exception{
+    public ModelAndView DeviceList(CommandMap commandMap, HttpServletRequest request) throws Exception{
         ModelAndView mv = new ModelAndView("jsonView");
-        List<Map<String,Object>> dvc = deviceService.DeviceList(commandMap.getMap());
-        mv.addObject("data", dvc);
+        String userId = (String) request.getSession().getAttribute("user_id");
+        commandMap.put("user_id", userId);
+        List<Map<String,Object>> map = deviceService.DeviceList(commandMap.getMap());
+        mv.addObject("data", map);
         return mv;
     }
 
     @RequestMapping(value="/add")
     public ModelAndView DeviceAdd(CommandMap commandMap, HttpSession session) throws Exception {
         ModelAndView mv = new ModelAndView("jsonView");
+        String userId = (String) session.getAttribute("user_id");
+        commandMap.put("user_id", userId);
         deviceService.addDevice(commandMap.getMap());
         return mv;
     }

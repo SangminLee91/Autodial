@@ -5,12 +5,12 @@
 
     <!-- 조회 -->
     <select id="DeviceList" parameterType="hashmap" resultType="hashmap">
-        call usp_device_list_s()
+        call usp_device_list_s(#{user_id})
     </select>
 
     <!-- 삽입 -->
     <insert id="DeviceAdd" parameterType="hashmap">
-        call usp_device_i(#{lte_phone}, #{ddd_number}, #{cid_number})
+        call usp_device_i(#{user_id}, #{lte_phone}, #{ddd_number}, #{cid_number})
     </insert>
 
     <!-- 수정 -->
@@ -22,14 +22,6 @@
     <update id="DeviceDel" parameterType="hashmap">
         call usp_device_d(#{seq ,jdbcType=INTEGER})
     </update>
-
-    <select id="MonitorList" parameterType="hashmap" resultType="hashmap">
-        SELECT seq,
-               lte_phone,
-               cid_number,
-               DATE_FORMAT(reg_dt, '%Y/%m/%d %k:%i') AS reg_dt
-        from device
-    </select>
 
     <select id="StatsList" parameterType="hashmap" resultType="hashmap">
         call usp_stats_list_s(#{srch_type, jdbcType=INTEGER}, #{start_dt}, #{end_dt})

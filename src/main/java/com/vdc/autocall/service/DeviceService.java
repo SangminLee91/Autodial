@@ -34,15 +34,11 @@ public class DeviceService {
         return deviceDao.DetailList(map);
     }
 
-//    public List<Map<String, Object>> MonitorList(Map<String, Object> map) throws Exception {
-//        return deviceDao.MonitorList(map);
-//    }
     public List<Map<String, Object>> getstats_excel(Map<String, Object> map) throws Exception {
         return deviceDao.getstats_excel(map);
     }
     public List<Map<String, Object>> getdetail_excel(Map<String, Object> map) throws Exception{
         return deviceDao.getdetail_excel(map);
     }
-
 
 }
